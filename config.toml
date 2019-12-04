@@ -1,0 +1,46 @@
+RelativeURLs=true
+CanonifyURLs=true
+languageCode = "ko-KR"
+defaultContentLanguage = "kr"
+
+title = "AWS Korea WAF Workshop"
+theme = "learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+
+[params]
+  editURL = "https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/"
+  description = "AWS Korea WAF Workshop"
+  author = "Eunsu Shin"
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "awskr"
+  disableSearch = false
+  disableAssetsBusting = true
+  # When using mulitlingual website, disable the switch language button.
+  disableLanguageSwitchingButton = true
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = true
+
+[outputs]
+home = [ "html", "RSS", "JSON"]
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+
+[Languages]
+[Languages.kr]
+title = "AWS WAF Workshop"
+weight = 1
+languageName = "Korean"
+
+[[Languages.kr.menu.shortcuts]] 
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/awslabs/amazon-sagemaker-examples"
+weight = 10
