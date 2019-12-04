@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS WAF Automation LAB on AWS WAF Workshop</title>
+    <link>/</link>
+    <description>Recent content in AWS WAF Automation LAB on AWS WAF Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS 자원 삭제</title>
+      <link>/post/_module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/_module1.html</guid>
+      <description>본 실습 과정에서 사용된 AWS 자원은 크게 2가지 유형으로 생성되었습니다. 하나는 CloudFormation 을 통하여 자동으로 생성되었고 하나는 Web ACL 로 여러분들이 각각 수작업으로 생성이 되었습니다. 따라서, 실습에 사용된 AWS 자원을 삭제하려면 사용된 CloudFormation 을 삭제하고 Web ACL 을 삭제하셔야 합니다.
+1. Web ACL 삭제 Web ACL 을 삭제하기 위해서는 먼저 Web ACL 과 연결되어 있는 AWS Resource 를 제거하여야 합니다. 실습 과정에서 ALB 와의 연결을 설정하였으므로 ALB 와의 연결을 삭제하도록 하겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>DVWA 환경 설정</title>
+      <link>/attack/_module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/attack/_module1.html</guid>
+      <description>본 실습에서 생성된 DVWA 서버는 기본적으로 주요 취약점을 사용할 수 없는 환경으로 설정이 되어 있습니다. 따라서, 실습 진행과정에서 공격을 쉽게 수행하기 위해서는 DVWA 의 Security Level 설정을 변경해주어야 합니다. DVWA 에 접속한 후 다음과 같이 화면 하단의 &amp;ldquo;DVWA Security&amp;rdquo; 메뉴를 클릭합니다.
+DVWA Security 화면으로 이동한 후 화면 중간의 Pull Down 메뉴에서 기본값으로 설정되어 있는 &amp;ldquo;Impossible&amp;rdquo; 을 &amp;ldquo;Low&amp;rdquo; 로 변경한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.</description>
+    </item>
+    
+    <item>
+      <title>SQL Injection</title>
+      <link>/attack/_module2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/attack/_module2.html</guid>
+      <description>실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 SQL Injection 공격을 진행하도록 하겠습니다. SQL Injection 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 &amp;ldquo;SQL Injectin&amp;rdquo; 메뉴를 클릭한 후 우측의 &amp;ldquo;User ID&amp;rdquo; 를 입력하는 화면에서 아래의 SQL 구문을 입력한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.
+ &#39; OR 1=1 #  위 공격에 사용되는 특수문자는 &amp;ldquo;`&amp;rdquo; 입니다. 코드를 직접 입력했는데 공격이 성공되지 않으시는 분들은 위 코드를 그대로 복사하셔서 사용하시기 바랍니다.
+ &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭한 후 아래 화면과 같이 여러가지 계정 정보가 출력되는 것을 확인합니다.</description>
+    </item>
+    
+    <item>
+      <title>Web ACL 생성</title>
+      <link>/mitigation/_module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/mitigation/_module1.html</guid>
+      <description>이번에는 웹 공격을 방어하기 위하여 AWS WAF 를 구성해보도록 하겠습니다.
+AWS WAF 를 구성하는 방법은 여러가지가 있지만 본 실습에서는 Web ACL 을 먼저 생성한 후 각 공격 유형별로 Rule 을 생성하여 Web ACL 에 추가하는 방법을 따르도록 하겠습니다.
+현재 AWS WAF 는 기존에 제공되던 AWS WAF 메뉴와 함께 새로운 AWS WAF v2 메뉴가 제공되고 있습니다. 본 실습에서는 AWS WAF v2 를 기준으로 진행되기 때문에 반드시 새로운 AWS WAF 메뉴를 선택하신 후 진행하시기 바랍니다.</description>
+    </item>
+    
+    <item>
+      <title>실습 안내</title>
+      <link>/pre/_module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pre/_module1.html</guid>
+      <description>AWS WAF는 일반적인 웹 취약점 공격으로부터 웹 애플리케이션을 보호하는 데 도움이 되는 웹 애플리케이션 방화벽입니다. AWS WAF를 사용하면 사용자 정의 가능한 웹 보안 규칙을 정의함으로써 어떤 트래픽에 웹 애플리케이션에 대한 엑세스를 허용하거나 차단할지 제어할 수 있습니다. AWS WAF는 SQL 명령어 주입이나 교차 사이트 스크립팅 등 공격 패턴을 차단하는 사용자 지정 규칙과 특정 애플리케이션을 위해 설계된 규칙을 생성할 수 있습니다. EC2 상에서 작동하는 웹 서버 앞의 ALB (Application Load Balancer)나 CDN 서비스인 CloudFront 중 하나에 AWS WAF를 배포할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>SQL Injection 공격 차단</title>
+      <link>/mitigation/_module2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/mitigation/_module2.html</guid>
+      <description>Web ACL 에 Rule 을 적용하기 위해서는 Rule 이나 Rule Group 을 생성하여야 합니다. 관리자는 적용하고자 하는 목적에 따라 3rd Party 파트너가 제공하는 관리형 Rule Group 을 사용하거나 AWS 가 관리하는 AWS Managed Rule 을 사용할 수도 있습니다. 이 실습에서는 Managed Rule 이나 Rule Group 을 사용하지 않고 공격 타입별로 각각의 Rule 을 생성한 후 Web ACL 에 적용하도록 하겠습니다.
+ 실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다.</description>
+    </item>
+    
+    <item>
+      <title>XSS Exploit</title>
+      <link>/attack/_module3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/attack/_module3.html</guid>
+      <description>실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 XSS Exploit 공격을 진행하도록 하겠습니다. XSS Exploit 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 &amp;ldquo;XSS(Reflected)&amp;rdquo; 메뉴를 클릭한 후 우측의 &amp;ldquo;User ID&amp;rdquo; 를 입력하는 화면에서 아래의 XSS 코드를 입력한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.
+&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;  &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭하면 아래와 같이 경고창이 나타나며 경고창에는 쿠키 정보가 포함되어 있는 것을 확인할 수 있습니다. 이 경고창은 조금 전 입력한 XSS 코드에 의하여 생성된 것으로 취약한 시스템에서의 쿠키 정보를 탈취하는 것을 손쉽게 시연하기 위하여 경고창이 사용되었습니다.</description>
+    </item>
+    
+    <item>
+      <title>DVWA 설치</title>
+      <link>/pre/_module2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pre/_module2.html</guid>
+      <description>취약한 웹 서비스 환경 구성 이번 단계에서는 위협 요인이 내재된 환경을 구성하기 위해 CloudFormation을 실행합니다. CloudFormation을 통해 생성되는 리소스는 VPC (Virtual Private Cloud), ALB (Application Load Balancer), EC2인스턴스 (Linux, Apache, MySQL, PHP) 등 입니다.
+ AWS 리전 확인
+a. 이번 실습은 AWS 서울 (Seoul) 리전에서 수행됩니다.
+b. AWS 관리 콘솔로 접속해서, 아래의 화면과 같이 AWS 서울 리전이 선택되었는지 확인합니다.  Open AWS Console    본 실습 의 모든 과정은 서울 리전에서 이루어집니다.</description>
+    </item>
+    
+    <item>
+      <title>XSS 공격 차단</title>
+      <link>/mitigation/_module3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/mitigation/_module3.html</guid>
+      <description>이번에는 XSS 공격을 차단할 수 있는 Rule 을 생성하여 Web ACL 에 추가하도록 하겠습니다.
+ 실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 &amp;ldquo;Asia Pacific(Seoul)&amp;rdquo; 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.  Web ACL 메뉴를 클릭하면 선택되어 있는 리전이 Seoul Region 이 아닐 수도 있으므로 반드시 확인하시기 바랍니다.</description>
+    </item>
+    
+    <item>
+      <title>Chrome Extention 설치</title>
+      <link>/pre/_module3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pre/_module3.html</guid>
+      <description>AWS WAF 에서는 국가별 공인 IP 를 기준으로 트래픽을 허용/차단 하는 기능을 제공하고 있습니다. 랩 과정에서 지정된 국가를 차단하는 환경을 가상으로 구성하기위하여 Chrome 에서 사용할 수 있는 &amp;ldquo;Browsec VPN&amp;rdquo; 을 설치하도록 하겠습니다.
+Chrome Store 링크를 클릭한 후 아래와 같이 Browsec Extension 을 선택한 후 &amp;ldquo;Add to Chrome&amp;rdquo; 버튼을 클릭합니다.
+아래와 같이 Extension 설치를 확인하는 확인창이 뜨면 &amp;ldquo;Add Extension&amp;rdquo; 을 클릭하여 설치를 계속합니다.
+설치된 Browsec VPN Exntension 은 이후 실습 과정에서 브라우저의 출발지 국가 정보를 변경하여 AWS WAF 의 국가별 차단 기능을 점검하는데 사용됩니다.</description>
+    </item>
+    
+    <item>
+      <title>국가별 IP 차단</title>
+      <link>/mitigation/_module4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/mitigation/_module4.html</guid>
+      <description>이번에는 AWS WAF 에서 제공하는 국가별 IP 정보를 기준으로 특정 국가에서 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다.
+ 차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 특정 국가에서 발생되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
+ 크롬 브라우저에서 Browsec VPN 을 선택한 후 아래와 같이 &amp;ldquo;OFF&amp;rdquo; 를 &amp;ldquo;On&amp;rdquo; 으로 변경한 후 &amp;ldquo;Change&amp;rdquo; 버튼을 클릭하여 사용하고자하는 국가를 선택합니다.   Browsec 메뉴에서 Premium 으로 표기되어 있는 국가는 별도의 과금이 발생하는 국가이니 실습 과정에서는 반드시 무료 국가를 선택하시기 바랍니다.</description>
+    </item>
+    
+    <item>
+      <title>JSON 기반 Rule 설정</title>
+      <link>/mitigation/_module5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/mitigation/_module5.html</guid>
+      <description>이번에는 AWS WAF v2 에서 새롭게 제공되는 Rule 설정 방식인 JSON 기반 Rule 생성을 해보도록 하겠습니다. 빠른 실습 진행을 위하여 지금까지 생성하였던 Rule 들을 삭제하고 동일한 Rule 을 JSON 기반으로 생성하도록 하겠습니다.
+먼저, 현재까지 생성된 Rule 을 JSON 기반 문서로 다운로드하기 위하여 아래와 같이 Web ACL 의 화면 우측 상단의 &amp;ldquo;Download web ACL as JSON&amp;rdquo; 버튼을 클릭한 후 파일을 저장합니다.  저장된 파일은 여러분들이 지금까지 실습을 진행하면서 생성하였던 Rule 정보들을 포함하고 있으며 별다른 추가 설정을 하지 않았다면 아래와 같은 내용을 담고 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
