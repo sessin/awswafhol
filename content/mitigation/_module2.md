@@ -5,9 +5,9 @@ pre = "<b>3.2 </b>"
 +++
 
 * * *
- Web ACL 에 Rule 을 적용하기 위해서는 Rule 이나 Rule Group 을  생성하여야 합니다. 관리자는 적용하고자 하는 목적에 따라 3rd Party 파트너가 제공하는 관리형 Rule Group 을 사용하거나 AWS 가 관리하는 AWS Managed Rule 을 사용할 수도 있습니다. 이 Lab 에서는 Managed Rule 이나 Rule Group 을 사용하지 않고 공격 타입별로 각각의 Rule 을 생성한 후 Web ACL 에 적용하도록 하겠습니다.
+ Web ACL 에 Rule 을 적용하기 위해서는 Rule 이나 Rule Group 을  생성하여야 합니다. 관리자는 적용하고자 하는 목적에 따라 3rd Party 파트너가 제공하는 관리형 Rule Group 을 사용하거나 AWS 가 관리하는 AWS Managed Rule 을 사용할 수도 있습니다. 이 실습에서는 Managed Rule 이나 Rule Group 을 사용하지 않고 공격 타입별로 각각의 Rule 을 생성한 후 Web ACL 에 적용하도록 하겠습니다.
  
- - Lab 에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 "Asia Pacific(Seoul)" 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.
+ - 실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 "Asia Pacific(Seoul)" 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.
  
  {{% notice info %}}
  Web ACL 메뉴를 클릭하면 선택되어 있는 리전이 Seoul Region 이 아닐 수도 있으므로 반드시 확인하시기 바랍니다.

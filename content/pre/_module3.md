@@ -15,8 +15,8 @@ AWS WAF 에서는 국가별 공인 IP 를 기준으로 트래픽을 허용/차�
 
 ![Lab Diagram](/images/chrome_extension1.png)
 
-설치된 Browsec VPN Exntension 은 이후 Lab 과정에서 브라우저의 출발지 국가 정보를 변경하여 AWS WAF 의 국가별 차단 기능을 점검하는데 사용됩니다.
+설치된 Browsec VPN Exntension 은 이후 실습 과정에서 브라우저의 출발지 국가 정보를 변경하여 AWS WAF 의 국가별 차단 기능을 점검하는데 사용됩니다.
 
 {{% notice info %}}
- Browsec VPN Extension 은 사용자의 필요에 따라 Chrome 에서 Lab 이후에도 사용하실 수 있으며 불필요한 경우 Lab 종료 이후에 삭제하시기 바랍니다.
+ Browsec VPN Extension 은 사용자의 필요에 따라 Chrome 에서 실습 이후에도 사용하실 수 있으며 불필요한 경우 Lab 종료 이후에 삭제하시기 바랍니다.
 {{% /notice %}}

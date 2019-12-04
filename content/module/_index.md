@@ -4,7 +4,7 @@ chapter = true
 weight = 1
 +++
 
-본 AWS WAF Lab 은 아래의 각 절차에 따라 수행됩니다..
+본 AWS WAF 실습은 아래의 각 절차에 따라 수행됩니다..
 
 1. 사전 준비
 2. 공격 및 방어

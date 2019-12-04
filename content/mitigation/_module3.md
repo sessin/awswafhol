@@ -7,7 +7,7 @@ pre = "<b>3.3 </b>"
 * * *
  이번에는 XSS 공격을 차단할 수 있는 Rule 을 생성하여 Web ACL 에 추가하도록 하겠습니다.
  
- - Lab 에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 "Asia Pacific(Seoul)" 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.
+ - 실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 "Asia Pacific(Seoul)" 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.
  
  {{% notice info %}}
  Web ACL 메뉴를 클릭하면 선택되어 있는 리전이 Seoul Region 이 아닐 수도 있으므로 반드시 확인하시기 바랍니다.

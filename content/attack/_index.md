@@ -2,7 +2,7 @@
 title = "공격"
 chapter = true
 date = 2019-10-15T15:09:31+09:00
-weight = 1
+weight = 3
 pre = "<b>2. </b>"
 +++
 

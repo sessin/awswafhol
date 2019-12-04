@@ -1,8 +1,8 @@
 +++
-title = "LAB 개요"
+title = "실습 개요"
 chapter = true
 date = 2019-10-15T15:09:31+09:00
-weight = 1
+weight = 2
 pre = "<b>1. </b>"
 +++
 

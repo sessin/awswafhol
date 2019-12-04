@@ -35,5 +35,5 @@ AWS WAF는 일반적인 웹 취약점 공격으로부터 웹 애플리케이션�
 
 * * *
 
-사전 준비 단계에서 사용되는 CloudFormation 에서는 아래와 같은 AWS 리소스를 생성하여 Lab 환경을 구성합니다.
+사전 준비 단계에서 사용되는 CloudFormation 에서는 아래와 같은 AWS 리소스를 생성하여 실습 환경을 구성합니다.
 ![Lab Diagram](/images/waflab_diagram.png)

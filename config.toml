@@ -42,5 +42,5 @@ languageName = "Korean"
 [[Languages.kr.menu.shortcuts]] 
 name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/awslabs/amazon-sagemaker-examples"
+url = "https://github.com/sessin/awswafhol"
 weight = 10
