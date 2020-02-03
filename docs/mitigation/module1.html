@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="kr" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="AWS WAF Workshop" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="description" content="AWS Korea WAF Workshop">
+<meta name="author" content="Eunsu Shin">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Web ACL 생성 :: AWS WAF Workshop</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-awskr.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/mitigation/module1.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/module.html" title="전체 실습 구성" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../module.html">
+          전체 실습 구성
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/pre.html" title="실습 개요" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../pre.html">
+          <b>1. </b>실습 개요
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module1.html" title="실습 안내" class="dd-item ">
+        <a href="../pre/module1.html">
+        <b>1.1 </b>실습 안내
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module2.html" title="DVWA 설치" class="dd-item ">
+        <a href="../pre/module2.html">
+        <b>1.2 </b>DVWA 설치
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module3.html" title="Chrome Extention 설치" class="dd-item ">
+        <a href="../pre/module3.html">
+        <b>1.3 </b>Chrome Extention 설치
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/attack.html" title="공격" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../attack.html">
+          <b>2. </b>공격
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/attack/module1.html" title="DVWA 환경 설정" class="dd-item ">
+        <a href="../attack/module1.html">
+        <b>2.1 </b>DVWA 환경 설정
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/attack/module2.html" title="SQL Injection" class="dd-item ">
+        <a href="../attack/module2.html">
+        <b>2.2 </b>SQL Injection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/attack/module3.html" title="XSS Exploit" class="dd-item ">
+        <a href="../attack/module3.html">
+        <b>2.3 </b>XSS Exploit
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mitigation.html" title="방어" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../mitigation.html">
+          <b>3. </b>방어
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mitigation/module1.html" title="Web ACL 생성" class="dd-item active">
+        <a href="../mitigation/module1.html">
+        <b>3.1 </b>Web ACL 생성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mitigation/module2.html" title="SQL Injection 공격 차단" class="dd-item ">
+        <a href="../mitigation/module2.html">
+        <b>3.2 </b>SQL Injection 공격 차단
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mitigation/module3.html" title="XSS 공격 차단" class="dd-item ">
+        <a href="../mitigation/module3.html">
+        <b>3.3 </b>XSS 공격 차단
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mitigation/module4.html" title="국가별 IP 차단" class="dd-item ">
+        <a href="../mitigation/module4.html">
+        <b>3.4 </b>국가별 IP 차단
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mitigation/module5.html" title="JSON 기반 Rule 설정" class="dd-item ">
+        <a href="../mitigation/module5.html">
+        <b>3.5 </b>JSON 기반 Rule 설정
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post.html" title="실습 구성 요소 삭제" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../post.html">
+          <b>4. </b>실습 구성 요소 삭제
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/post/module1.html" title="AWS 자원 삭제" class="dd-item ">
+        <a href="../post/module1.html">
+        <b>4.1 </b>AWS 자원 삭제
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/sessin/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2019 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/mitigation/module1.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text"></span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../'>AWS New WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>방어</a> > Web ACL 생성
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+
+      
+        <div id="body-inner">
+          <h1>Web ACL 생성</h1>
+          
+          
+
+
+<hr />
+
+<p>이번에는 웹 공격을 방어하기 위하여 AWS WAF 를 구성해보도록 하겠습니다.</p>
+
+<p>AWS WAF 를 구성하는 방법은 여러가지가 있지만 본 실습에서는 Web ACL 을 먼저 생성한 후 각 공격 유형별로 Rule 을 생성하여 Web ACL 에 추가하는 방법을 따르도록 하겠습니다.</p>
+
+
+<div class="notices info" ><p>현재 AWS WAF 는 기존에 제공되던 AWS WAF 메뉴와 함께 새로운 AWS WAF v2 메뉴가 제공되고 있습니다. 본 실습에서는 AWS WAF v2 를 기준으로 진행되기 때문에 반드시 새로운 AWS WAF 메뉴를 선택하신 후 진행하시기 바랍니다.</p>
+</div>
+
+
+<p>아래와 같이 AWS WAF 메뉴에서 Web ACL 을 선택한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl0.png" alt="DVWA Setting" /></p>
+
+<p>먼저 화면 중간의 &ldquo;Resource Type&rdquo; 을 &ldquo;Regional Resources&rdquo; 로 선택한 후 &ldquo;Region&rdquo; 을 &ldquo;Asia Pacific(Seoul)&rdquo; 로 선택하시기 바랍니다. Region 선택이 끝나신 후 &ldquo;Name&rdquo; 에 적당한 이름을 입력하시기 바랍니다. &ldquo;Name&rdquo; 을 입력한 후 TAB 을 누르시면 &ldquo;Cloudwatch Metric Name&rdquo; 이 Web ACL Name 과 동일한 이름으로 자동입력 됩니다.
+ <img src="../images/waf_create_acl1.png" alt="DVWA Setting" /></p>
+
+<p>생성되는 WebACL 에 리소스를 할당하기 위하여 &ldquo;Add AWS Resources&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl2.png" alt="DVWA Setting" /></p>
+
+<p>&ldquo;Add AWS Resources&rdquo; 화면에서 이전 과정에서 생성되었던 ALB 를 선택한 후 &ldquo;Add&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl3.png" alt="DVWA Setting" /></p>
+
+<p>아래와 같이 ALB 가 정상적으로 추가된 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl4.png" alt="DVWA Setting" /></p>
+
+<p>Rule 설정은 이후 과정에서 진행할 것이므로 그대로두고 화면 하단의 &ldquo;Default Action&rdquo; 이 &ldquo;Allow&rdquo; 로 되어 있는 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl5.png" alt="DVWA Setting" /></p>
+
+<p>설정된 Rule 없으므로 &ldquo;Set Rule Priority&rdquo; 에서 &ldquo;Next&rdquo; 를 클릭합니다.
+ <img src="../images/waf_create_acl6.png" alt="DVWA Setting" /></p>
+
+<p>&ldquo;Configure Metrics&rdquo; 에서도 &ldquo;Next&rdquo; 를 클릭합니다.
+ <img src="../images/waf_create_acl7.png" alt="DVWA Setting" /></p>
+
+<p>지금까지 설정한 내용이 모두 맞는지 확인한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
+ <img src="../images/waf_create_acl8.png" alt="DVWA Setting" /></p>
+
+<p>정상적으로 진행되었다면 아래 화면과 같이 새로운 Web ACL 이 생성되는 것을 확인할 수 있습니다.
+ <img src="../images/waf_create_acl9.png" alt="DVWA Setting" /></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../mitigation.html" title="방어"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../mitigation/module2.html" title="SQL Injection 공격 차단" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+  </body>
+</html>
+

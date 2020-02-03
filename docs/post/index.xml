@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>실습 구성 요소 삭제 on AWS WAF Workshop</title>
+    <link>/post.html</link>
+    <description>Recent content in 실습 구성 요소 삭제 on AWS WAF Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS 자원 삭제</title>
+      <link>/post/module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/module1.html</guid>
+      <description>본 실습 과정에서 사용된 AWS 자원은 크게 2가지 유형으로 생성되었습니다. 하나는 CloudFormation 을 통하여 자동으로 생성되었고 하나는 Web ACL 로 여러분들이 각각 수작업으로 생성이 되었습니다. 따라서, 실습에 사용된 AWS 자원을 삭제하려면 사용된 CloudFormation 을 삭제하고 Web ACL 을 삭제하셔야 합니다.
+1. Web ACL 삭제 Web ACL 을 삭제하기 위해서는 먼저 Web ACL 과 연결되어 있는 AWS Resource 를 제거하여야 합니다. 실습 과정에서 ALB 와의 연결을 설정하였으므로 ALB 와의 연결을 삭제하도록 하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
