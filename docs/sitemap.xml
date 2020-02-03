@@ -7,11 +7,11 @@
   </url>
   
   <url>
-    <loc>/post/_module1.html</loc>
+    <loc>/post/module1.html</loc>
   </url>
   
   <url>
-    <loc>/attack/_module1.html</loc>
+    <loc>/attack/module1.html</loc>
   </url>
   
   <url>
@@ -19,15 +19,15 @@
   </url>
   
   <url>
-    <loc>/attack/_module2.html</loc>
+    <loc>/attack/module2.html</loc>
   </url>
   
   <url>
-    <loc>/mitigation/_module1.html</loc>
+    <loc>/mitigation/module1.html</loc>
   </url>
   
   <url>
-    <loc>/pre/_module1.html</loc>
+    <loc>/pre/module1.html</loc>
   </url>
   
   <url>
@@ -36,11 +36,11 @@
   </url>
   
   <url>
-    <loc>/mitigation/_module2.html</loc>
+    <loc>/mitigation/module2.html</loc>
   </url>
   
   <url>
-    <loc>/attack/_module3.html</loc>
+    <loc>/attack/module3.html</loc>
   </url>
   
   <url>
@@ -49,11 +49,11 @@
   </url>
   
   <url>
-    <loc>/pre/_module2.html</loc>
+    <loc>/pre/module2.html</loc>
   </url>
   
   <url>
-    <loc>/mitigation/_module3.html</loc>
+    <loc>/mitigation/module3.html</loc>
   </url>
   
   <url>
@@ -62,15 +62,15 @@
   </url>
   
   <url>
-    <loc>/pre/_module3.html</loc>
+    <loc>/pre/module3.html</loc>
   </url>
   
   <url>
-    <loc>/mitigation/_module4.html</loc>
+    <loc>/mitigation/module4.html</loc>
   </url>
   
   <url>
-    <loc>/mitigation/_module5.html</loc>
+    <loc>/mitigation/module5.html</loc>
   </url>
   
   <url>

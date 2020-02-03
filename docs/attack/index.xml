@@ -13,20 +13,20 @@
     
     <item>
       <title>DVWA 환경 설정</title>
-      <link>/attack/_module1.html</link>
+      <link>/attack/module1.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/attack/_module1.html</guid>
+      <guid>/attack/module1.html</guid>
       <description>본 실습에서 생성된 DVWA 서버는 기본적으로 주요 취약점을 사용할 수 없는 환경으로 설정이 되어 있습니다. 따라서, 실습 진행과정에서 공격을 쉽게 수행하기 위해서는 DVWA 의 Security Level 설정을 변경해주어야 합니다. DVWA 에 접속한 후 다음과 같이 화면 하단의 &amp;ldquo;DVWA Security&amp;rdquo; 메뉴를 클릭합니다.
 DVWA Security 화면으로 이동한 후 화면 중간의 Pull Down 메뉴에서 기본값으로 설정되어 있는 &amp;ldquo;Impossible&amp;rdquo; 을 &amp;ldquo;Low&amp;rdquo; 로 변경한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.</description>
     </item>
     
     <item>
       <title>SQL Injection</title>
-      <link>/attack/_module2.html</link>
+      <link>/attack/module2.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/attack/_module2.html</guid>
+      <guid>/attack/module2.html</guid>
       <description>실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 SQL Injection 공격을 진행하도록 하겠습니다. SQL Injection 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 &amp;ldquo;SQL Injectin&amp;rdquo; 메뉴를 클릭한 후 우측의 &amp;ldquo;User ID&amp;rdquo; 를 입력하는 화면에서 아래의 SQL 구문을 입력한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.
  &#39; OR 1=1 #  위 공격에 사용되는 특수문자는 &amp;ldquo;`&amp;rdquo; 입니다. 코드를 직접 입력했는데 공격이 성공되지 않으시는 분들은 위 코드를 그대로 복사하셔서 사용하시기 바랍니다.
  &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭한 후 아래 화면과 같이 여러가지 계정 정보가 출력되는 것을 확인합니다.</description>
@@ -34,10 +34,10 @@ DVWA Security 화면으로 이동한 후 화면 중간의 Pull Down 메뉴에서
     
     <item>
       <title>XSS Exploit</title>
-      <link>/attack/_module3.html</link>
+      <link>/attack/module3.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/attack/_module3.html</guid>
+      <guid>/attack/module3.html</guid>
       <description>실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 XSS Exploit 공격을 진행하도록 하겠습니다. XSS Exploit 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 &amp;ldquo;XSS(Reflected)&amp;rdquo; 메뉴를 클릭한 후 우측의 &amp;ldquo;User ID&amp;rdquo; 를 입력하는 화면에서 아래의 XSS 코드를 입력한 후 &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭합니다.
 &amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;  &amp;ldquo;Submit&amp;rdquo; 버튼을 클릭하면 아래와 같이 경고창이 나타나며 경고창에는 쿠키 정보가 포함되어 있는 것을 확인할 수 있습니다. 이 경고창은 조금 전 입력한 XSS 코드에 의하여 생성된 것으로 취약한 시스템에서의 쿠키 정보를 탈취하는 것을 손쉽게 시연하기 위하여 경고창이 사용되었습니다.</description>
     </item>
