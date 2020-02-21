@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>방어 on AWS WAF Workshop</title>
@@ -49,8 +49,8 @@ AWS WAF 를 구성하는 방법은 여러가지가 있지만 본 실습에서는
       
       <guid>/mitigation/module4.html</guid>
       <description>이번에는 AWS WAF 에서 제공하는 국가별 IP 정보를 기준으로 특정 국가에서 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다.
- 차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 특정 국가에서 발생되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
- 크롬 브라우저에서 Browsec VPN 을 선택한 후 아래와 같이 &amp;ldquo;OFF&amp;rdquo; 를 &amp;ldquo;On&amp;rdquo; 으로 변경한 후 &amp;ldquo;Change&amp;rdquo; 버튼을 클릭하여 사용하고자하는 국가를 선택합니다.   Browsec 메뉴에서 Premium 으로 표기되어 있는 국가는 별도의 과금이 발생하는 국가이니 실습 과정에서는 반드시 무료 국가를 선택하시기 바랍니다.</description>
+  차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 특정 국가에서 발생되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
+  크롬 브라우저에서 Browsec VPN 을 선택한 후 아래와 같이 &amp;ldquo;OFF&amp;rdquo; 를 &amp;ldquo;On&amp;rdquo; 으로 변경한 후 &amp;ldquo;Change&amp;rdquo; 버튼을 클릭하여 사용하고자하는 국가를 선택합니다.   Browsec 메뉴에서 Premium 으로 표기되어 있는 국가는 별도의 과금이 발생하는 국가이니 실습 과정에서는 반드시 무료 국가를 선택하시기 바랍니다.</description>
     </item>
     
     <item>

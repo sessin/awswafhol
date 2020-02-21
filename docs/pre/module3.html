@@ -7,7 +7,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.64.1" />
   <meta name="description" content="AWS Korea WAF Workshop">
 <meta name="author" content="Eunsu Shin">
 
@@ -471,7 +471,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://github.com/sessin/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+                  <a class="padding" href="https://github.com/yijeong/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="../authors.html"><i class='fas fa-users'></i> Authors</a>
               </li>
           
         </ul>
@@ -535,7 +539,7 @@
           
           
           
-          <a href='../'>AWS New WAF 공격 및 방어 실습</a> > <a href='../pre.html'>실습 개요</a> > Chrome Extention 설치
+          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../pre.html'>실습 개요</a> > Chrome Extention 설치
           
           
           
@@ -547,7 +551,7 @@
           
           <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -563,20 +567,13 @@
           
 
 
-<hr />
-
+<hr>
 <p>AWS WAF 에서는 국가별 공인 IP 를 기준으로 트래픽을 허용/차단 하는 기능을 제공하고 있습니다. 랩 과정에서 지정된 국가를 차단하는 환경을 가상으로 구성하기위하여 Chrome 에서 사용할 수 있는 &ldquo;Browsec VPN&rdquo; 을 설치하도록 하겠습니다.</p>
-
-<p><a href="https://chrome.google.com/webstore/search/browsec" target="_blank">Chrome Store</a> 링크를 클릭한 후 아래와 같이 Browsec Extension 을 선택한 후 &ldquo;Add to Chrome&rdquo; 버튼을 클릭합니다.</p>
-
-<p><img src="../images/chrome_extension.png" alt="Lab Diagram" /></p>
-
+<p><a href="https://chrome.google.com/webstore/search/browsec">Chrome Store</a> 링크를 클릭한 후 아래와 같이 Browsec Extension 을 선택한 후 &ldquo;Add to Chrome&rdquo; 버튼을 클릭합니다.</p>
+<p><img src="../images/chrome_extension.png" alt="Lab Diagram"></p>
 <p>아래와 같이 Extension 설치를 확인하는 확인창이 뜨면 &ldquo;Add Extension&rdquo; 을 클릭하여 설치를 계속합니다.</p>
-
-<p><img src="../images/chrome_extension1.png" alt="Lab Diagram" /></p>
-
+<p><img src="../images/chrome_extension1.png" alt="Lab Diagram"></p>
 <p>설치된 Browsec VPN Exntension 은 이후 실습 과정에서 브라우저의 출발지 국가 정보를 변경하여 AWS WAF 의 국가별 차단 기능을 점검하는데 사용됩니다.</p>
-
 
 <div class="notices info" ><p>Browsec VPN Extension 은 사용자의 필요에 따라 Chrome 에서 실습 이후에도 사용하실 수 있으며 불필요한 경우 Lab 종료 이후에 삭제하시기 바랍니다.</p>
 </div>

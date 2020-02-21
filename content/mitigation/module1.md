@@ -45,3 +45,6 @@ pre = "<b>3.1 </b>"
   정상적으로 진행되었다면 아래 화면과 같이 새로운 Web ACL 이 생성되는 것을 확인할 수 있습니다.
  ![DVWA Setting](/images/waf_create_acl9.png)
  
+
+
+ 

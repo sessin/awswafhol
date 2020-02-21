@@ -7,7 +7,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.64.1" />
   <meta name="description" content="AWS Korea WAF Workshop">
 <meta name="author" content="Eunsu Shin">
 
@@ -471,7 +471,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://github.com/sessin/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+                  <a class="padding" href="https://github.com/yijeong/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="../authors.html"><i class='fas fa-users'></i> Authors</a>
               </li>
           
         </ul>
@@ -535,7 +539,7 @@
           
           
           
-          <a href='../'>AWS New WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>방어</a> > Web ACL 생성
+          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>방어</a> > Web ACL 생성
           
           
           
@@ -547,7 +551,7 @@
           
           <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -563,46 +567,33 @@
           
 
 
-<hr />
-
+<hr>
 <p>이번에는 웹 공격을 방어하기 위하여 AWS WAF 를 구성해보도록 하겠습니다.</p>
-
 <p>AWS WAF 를 구성하는 방법은 여러가지가 있지만 본 실습에서는 Web ACL 을 먼저 생성한 후 각 공격 유형별로 Rule 을 생성하여 Web ACL 에 추가하는 방법을 따르도록 하겠습니다.</p>
-
 
 <div class="notices info" ><p>현재 AWS WAF 는 기존에 제공되던 AWS WAF 메뉴와 함께 새로운 AWS WAF v2 메뉴가 제공되고 있습니다. 본 실습에서는 AWS WAF v2 를 기준으로 진행되기 때문에 반드시 새로운 AWS WAF 메뉴를 선택하신 후 진행하시기 바랍니다.</p>
 </div>
 
-
 <p>아래와 같이 AWS WAF 메뉴에서 Web ACL 을 선택한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl0.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl0.png" alt="DVWA Setting"></p>
 <p>먼저 화면 중간의 &ldquo;Resource Type&rdquo; 을 &ldquo;Regional Resources&rdquo; 로 선택한 후 &ldquo;Region&rdquo; 을 &ldquo;Asia Pacific(Seoul)&rdquo; 로 선택하시기 바랍니다. Region 선택이 끝나신 후 &ldquo;Name&rdquo; 에 적당한 이름을 입력하시기 바랍니다. &ldquo;Name&rdquo; 을 입력한 후 TAB 을 누르시면 &ldquo;Cloudwatch Metric Name&rdquo; 이 Web ACL Name 과 동일한 이름으로 자동입력 됩니다.
- <img src="../images/waf_create_acl1.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl1.png" alt="DVWA Setting"></p>
 <p>생성되는 WebACL 에 리소스를 할당하기 위하여 &ldquo;Add AWS Resources&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl2.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl2.png" alt="DVWA Setting"></p>
 <p>&ldquo;Add AWS Resources&rdquo; 화면에서 이전 과정에서 생성되었던 ALB 를 선택한 후 &ldquo;Add&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl3.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl3.png" alt="DVWA Setting"></p>
 <p>아래와 같이 ALB 가 정상적으로 추가된 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl4.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl4.png" alt="DVWA Setting"></p>
 <p>Rule 설정은 이후 과정에서 진행할 것이므로 그대로두고 화면 하단의 &ldquo;Default Action&rdquo; 이 &ldquo;Allow&rdquo; 로 되어 있는 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl5.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl5.png" alt="DVWA Setting"></p>
 <p>설정된 Rule 없으므로 &ldquo;Set Rule Priority&rdquo; 에서 &ldquo;Next&rdquo; 를 클릭합니다.
- <img src="../images/waf_create_acl6.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl6.png" alt="DVWA Setting"></p>
 <p>&ldquo;Configure Metrics&rdquo; 에서도 &ldquo;Next&rdquo; 를 클릭합니다.
- <img src="../images/waf_create_acl7.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl7.png" alt="DVWA Setting"></p>
 <p>지금까지 설정한 내용이 모두 맞는지 확인한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
- <img src="../images/waf_create_acl8.png" alt="DVWA Setting" /></p>
-
+<img src="../images/waf_create_acl8.png" alt="DVWA Setting"></p>
 <p>정상적으로 진행되었다면 아래 화면과 같이 새로운 Web ACL 이 생성되는 것을 확인할 수 있습니다.
- <img src="../images/waf_create_acl9.png" alt="DVWA Setting" /></p>
+<img src="../images/waf_create_acl9.png" alt="DVWA Setting"></p>
 
 
 <footer class=" footline" >

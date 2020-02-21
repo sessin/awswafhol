@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>실습 개요 on AWS WAF Workshop</title>
@@ -27,9 +27,9 @@
       
       <guid>/pre/module2.html</guid>
       <description>취약한 웹 서비스 환경 구성 이번 단계에서는 위협 요인이 내재된 환경을 구성하기 위해 CloudFormation을 실행합니다. CloudFormation을 통해 생성되는 리소스는 VPC (Virtual Private Cloud), ALB (Application Load Balancer), EC2인스턴스 (Linux, Apache, MySQL, PHP) 등 입니다.
- AWS 리전 확인
-a. 이번 실습은 AWS 서울 (Seoul) 리전에서 수행됩니다.
-b. AWS 관리 콘솔로 접속해서, 아래의 화면과 같이 AWS 서울 리전이 선택되었는지 확인합니다.  Open AWS Console    본 실습 의 모든 과정은 서울 리전에서 이루어집니다.</description>
+  AWS 리전 확인
+a.	이번 실습은 AWS 서울 (Seoul) 리전에서 수행됩니다.
+b.	AWS 관리 콘솔로 접속해서, 아래의 화면과 같이 AWS 서울 리전이 선택되었는지 확인합니다.  Open AWS Console    본 실습 의 모든 과정은 서울 리전에서 이루어집니다.</description>
     </item>
     
     <item>
