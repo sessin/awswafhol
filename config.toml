@@ -42,5 +42,10 @@ languageName = "Korean"
 [[Languages.kr.menu.shortcuts]] 
 name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/sessin/awswafhol"
+url = "https://github.com/yijeong/awswafhol"
 weight = 10
+
+[[Languages.kr.menu.shortcuts]]
+name = "<i class='fas fa-users'></i> Authors"
+url = "/authors.html"
+weight = 20
