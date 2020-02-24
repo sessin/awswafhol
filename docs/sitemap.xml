@@ -7,7 +7,7 @@
   </url>
   
   <url>
-    <loc>/post/module1.html</loc>
+    <loc>/mitigation_deep/module1.html</loc>
   </url>
   
   <url>
@@ -15,7 +15,7 @@
   </url>
   
   <url>
-    <loc>/attack/module2.html</loc>
+    <loc>/logging/module1.html</loc>
   </url>
   
   <url>
@@ -23,11 +23,15 @@
   </url>
   
   <url>
-    <loc>/pre/module1.html</loc>
+    <loc>/post/module1.html</loc>
   </url>
   
   <url>
-    <loc>/module.html</loc>
+    <loc>/overview/module1.html</loc>
+  </url>
+  
+  <url>
+    <loc>/overview.html</loc>
   </url>
   
   <url>
@@ -40,7 +44,23 @@
   </url>
   
   <url>
-    <loc>/attack/module3.html</loc>
+    <loc>/post/module2.html</loc>
+  </url>
+  
+  <url>
+    <loc>/pre/module1.html</loc>
+  </url>
+  
+  <url>
+    <loc>/mitigation_deep/module2.html</loc>
+  </url>
+  
+  <url>
+    <loc>/attack/module2.html</loc>
+  </url>
+  
+  <url>
+    <loc>/overview/module2.html</loc>
   </url>
   
   <url>
@@ -49,11 +69,11 @@
   </url>
   
   <url>
-    <loc>/pre/module2.html</loc>
+    <loc>/mitigation/module3.html</loc>
   </url>
   
   <url>
-    <loc>/mitigation/module3.html</loc>
+    <loc>/pre/module2.html</loc>
   </url>
   
   <url>
@@ -70,7 +90,12 @@
   </url>
   
   <url>
-    <loc>/mitigation/module5.html</loc>
+    <loc>/mitigation_deep.html</loc>
+    <lastmod>2019-10-15T15:09:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/logging.html</loc>
   </url>
   
   <url>

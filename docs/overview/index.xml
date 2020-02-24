@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>실습 개요 on AWS WAF Workshop</title>
+    <link>/overview.html</link>
+    <description>Recent content in 실습 개요 on AWS WAF Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    
+	<atom:link href="/overview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>사전 지식</title>
+      <link>/overview/module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/overview/module1.html</guid>
+      <description>AWS WAF AWS WAF는 Amazon CloudFront 배포, Amazon API Gateway API 또는 Application Load Balancer에 전달되는 HTTP(S) 요청을 모니터링할 수 있게 해주는 웹 애플리케이션 방화벽입니다.
+또한 AWS WAF을 사용하여 콘텐츠에 대한 액세스를 제어할 수 있습니다. 요청이 허용되는 IP 주소나 쿼리 문자열의 값으로부터 지정하는 조건 등 지정하는 조건에 따라, Amazon CloudFront 배포, Amazon API Gateway API 또는 Application Load Balancer는 요청된 콘텐츠나 HTTP 403 상태 코드(금지됨)로 요청에 응답합니다. 또한 요청이 차단될 때 사용자 지정 오류 페이지를 반환하도록 CloudFront를 구성할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>사전 준비 사항</title>
+      <link>/overview/module2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/overview/module2.html</guid>
+      <description>본 실습은 다음과 같은 사전 준비사항을 요구합니다.
+ AWS 계정 Chrome Browser  실습 과정을 원활하게 진행하기 위해서는 크롬 브라우져가 필요하므로 사용하시는 랩탑에 크롬 브라우져를 설치해주시기 바랍니다.
+ </description>
+    </item>
+    
+  </channel>
+</rss>
