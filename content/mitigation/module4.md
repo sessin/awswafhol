@@ -45,5 +45,5 @@ pre = "<b>3.4 </b>"
 - 모든 설정이 정상적으로 이뤄졌다면 아래와 같이 "403 Forbidden" 메시지와 함께 차단된 것을 확인할 수 있습니다.
  ![DVWA Setting](/images/blocked.png)
 
-- 국가별 차단 기능을 확인하였으므로 User-Agent Switcher 를 아래와 같이 원복 합니다.
+- 문자열 일치 기반 차단 기능을 확인하였으므로 User-Agent Switcher 를 아래와 같이 원복 합니다.
  ![DVWA Setting](/images/uaswitcher_block5.png) 
