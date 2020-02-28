@@ -234,6 +234,44 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module4.html" title="AWS WAF Web ACL 구성" class="dd-item ">
+        <a href="../pre/module4.html">
+        <b>1.4 </b>AWS WAF Web ACL 구성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module5.html" title="AWS WAF 로깅 활성화" class="dd-item ">
+        <a href="../pre/module5.html">
+        <b>1.5 </b>AWS WAF 로깅 활성화
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -343,9 +381,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module1.html" title="Web ACL 생성" class="dd-item ">
+      <li data-nav-id="/mitigation/module1.html" title="AWS Managed Rule 추가" class="dd-item ">
         <a href="../mitigation/module1.html">
-        <b>3.1 </b>Web ACL 생성
+        <b>3.1 </b>AWS Managed Rule 추가
         
         </a>
     </li>
@@ -362,9 +400,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module2.html" title="AWS Managed Rule 추가" class="dd-item ">
+      <li data-nav-id="/mitigation/module2.html" title="custom rule 추가 1" class="dd-item ">
         <a href="../mitigation/module2.html">
-        <b>3.2 </b>AWS Managed Rule 추가
+        <b>3.2 </b>custom rule 추가 1
         
         </a>
     </li>
@@ -381,28 +419,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 1" class="dd-item ">
+      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 2" class="dd-item ">
         <a href="../mitigation/module3.html">
-        <b>3.3 </b>custom rule 추가 1
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mitigation/module4.html" title="custom rule 추가 2" class="dd-item ">
-        <a href="../mitigation/module4.html">
-        <b>3.4 </b>custom rule 추가 2
+        <b>3.3 </b>custom rule 추가 2
         
         </a>
     </li>
@@ -496,13 +515,13 @@
  
   
     
-    <li data-nav-id="/logging.html" title="WAF 로깅" class="dd-item 
+    <li data-nav-id="/logging.html" title="AWS WAF 로깅 확인" class="dd-item 
         
         
         
         ">
       <a href="../logging.html">
-          <b>5. </b>WAF 로깅
+          <b>5. </b>AWS WAF 로깅 확인
           
       </a>
       
@@ -728,17 +747,29 @@
 
 <h3 id="dvwa-웹-페이지-접속-확인">DVWA 웹 페이지 접속 확인</h3>
 <p>DVWA 스택이 정상적으로 생성되었다면 템플릿을 통하여 생성된 DVWA 웹페이지에 정상적으로 접속이 되는지 확인해보도록 하겠습니다.</p>
+<ul>
+<li>
 <p>AWS Management Console 의 EC2 메뉴하단에 새로운 ALB (Application Load Balancer)가 생성된 것을 확인한 후 해당 ALB 의 DNS 이름을 이용하여 인터넷 브라우져에서 접속합니다.
 <img src="../images/DVWA_Access.png" alt="DVWA Access"></p>
+</li>
+<li>
 <p>아래와 같이 DVWA 의 로그인 페이지로 접속이 가능한 것을 확인합니다.
 <img src="../images/DVWA_login.png" alt="DVWA Login"></p>
+</li>
+<li>
 <p><em>&ldquo;ID = admin&rdquo;, &ldquo;Password = password&rdquo;</em> 를 입력하고 다음과 같이 DVWA 에 정상적으로 로그인이 되는 것을 확인합니다.
 <img src="../images/DVWA_mainpage.png" alt="DVWA Login"></p>
+</li>
+</ul>
 <h3 id="dvwa-환경-설정">DVWA 환경 설정</h3>
-<p>본 실습에서 생성된 DVWA 서버는 기본적으로 주요 취약점을 사용할 수 없는 환경으로 설정이 되어 있습니다. 따라서, 실습 진행과정에서 공격을 쉽게 수행하기 위해서는 DVWA 의 Security Level 설정을 변경해주어야 합니다.
-DVWA 에 접속한 후 다음과 같이 화면 하단의 &ldquo;DVWA Security&rdquo; 메뉴를 클릭합니다.</p>
+<p>본 실습에서 생성된 DVWA 서버는 기본적으로 주요 취약점을 사용할 수 없는 환경으로 설정이 되어 있습니다. 따라서, 실습 진행과정에서 공격을 쉽게 수행하기 위해서는 DVWA 의 Security Level 설정을 변경해주어야 합니다.</p>
+<ul>
+<li>DVWA 에 접속한 후 다음과 같이 화면 하단의 &ldquo;DVWA Security&rdquo; 메뉴를 클릭합니다.</li>
+</ul>
 <p><img src="../images/DVWA_setting1.png" alt="DVWA Setting"></p>
-<p>DVWA Security 화면으로 이동한 후 화면 중간의 Pull Down 메뉴에서  기본값으로 설정되어 있는 &ldquo;Impossible&rdquo; 을 &ldquo;Low&rdquo; 로 변경한 후 &ldquo;Submit&rdquo; 버튼을 클릭합니다.</p>
+<ul>
+<li>DVWA Security 화면으로 이동한 후 화면 중간의 Pull Down 메뉴에서  기본값으로 설정되어 있는 &ldquo;Impossible&rdquo; 을 &ldquo;Low&rdquo; 로 변경한 후 &ldquo;Submit&rdquo; 버튼을 클릭합니다.</li>
+</ul>
 <p><img src="../images/DVWA_setting2.png" alt="DVWA Setting"></p>
 
 
@@ -889,22 +920,6 @@ DVWA 에 접속한 후 다음과 같이 화면 하단의 &ldquo;DVWA Security&rd
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -968,6 +983,38 @@ DVWA 에 접속한 후 다음과 같이 화면 하단의 &ldquo;DVWA Security&rd
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             

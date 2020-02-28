@@ -234,6 +234,44 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module4.html" title="AWS WAF Web ACL 구성" class="dd-item ">
+        <a href="../pre/module4.html">
+        <b>1.4 </b>AWS WAF Web ACL 구성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module5.html" title="AWS WAF 로깅 활성화" class="dd-item ">
+        <a href="../pre/module5.html">
+        <b>1.5 </b>AWS WAF 로깅 활성화
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -343,9 +381,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module1.html" title="Web ACL 생성" class="dd-item ">
+      <li data-nav-id="/mitigation/module1.html" title="AWS Managed Rule 추가" class="dd-item ">
         <a href="../mitigation/module1.html">
-        <b>3.1 </b>Web ACL 생성
+        <b>3.1 </b>AWS Managed Rule 추가
         
         </a>
     </li>
@@ -362,9 +400,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module2.html" title="AWS Managed Rule 추가" class="dd-item ">
+      <li data-nav-id="/mitigation/module2.html" title="custom rule 추가 1" class="dd-item ">
         <a href="../mitigation/module2.html">
-        <b>3.2 </b>AWS Managed Rule 추가
+        <b>3.2 </b>custom rule 추가 1
         
         </a>
     </li>
@@ -381,28 +419,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 1" class="dd-item ">
+      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 2" class="dd-item ">
         <a href="../mitigation/module3.html">
-        <b>3.3 </b>custom rule 추가 1
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mitigation/module4.html" title="custom rule 추가 2" class="dd-item ">
-        <a href="../mitigation/module4.html">
-        <b>3.4 </b>custom rule 추가 2
+        <b>3.3 </b>custom rule 추가 2
         
         </a>
     </li>
@@ -496,13 +515,13 @@
  
   
     
-    <li data-nav-id="/logging.html" title="WAF 로깅" class="dd-item 
+    <li data-nav-id="/logging.html" title="AWS WAF 로깅 확인" class="dd-item 
         
         
         
         ">
       <a href="../logging.html">
-          <b>5. </b>WAF 로깅
+          <b>5. </b>AWS WAF 로깅 확인
           
       </a>
       
@@ -729,9 +748,13 @@
 <hr>
 <h3 id="browsec-vpn-설치">Browsec VPN 설치</h3>
 <p>AWS WAF 에서는 국가별 공인 IP 를 기준으로 트래픽을 허용/차단 하는 기능을 제공하고 있습니다. 랩 과정에서 지정된 국가를 차단하는 환경을 가상으로 구성하기위하여 Chrome 에서 사용할 수 있는 &ldquo;Browsec VPN&rdquo; 을 설치하도록 하겠습니다.</p>
-<p><a href="https://chrome.google.com/webstore/search/browsec">Chrome Store</a> 링크를 클릭한 후 아래와 같이 Browsec Extension 을 선택한 후 &ldquo;Add to Chrome(또는 크롬에 추가)&rdquo; 버튼을 클릭합니다.</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/search/browsec">Chrome Store</a> 링크를 클릭한 후 아래와 같이 Browsec Extension 을 선택한 후 &ldquo;Add to Chrome(또는 크롬에 추가)&rdquo; 버튼을 클릭합니다.</li>
+</ul>
 <p><img src="../images/chrome_extension.png" alt="Lab Diagram"></p>
-<p>아래와 같이 Extension 설치를 확인하는 확인창이 뜨면 &ldquo;Add Extension&rdquo; 을 클릭하여 설치를 계속합니다.</p>
+<ul>
+<li>아래와 같이 Extension 설치를 확인하는 확인창이 뜨면 &ldquo;Add Extension&rdquo; 을 클릭하여 설치를 계속합니다.</li>
+</ul>
 <p><img src="../images/chrome_extension1.png" alt="Lab Diagram"></p>
 <p>설치된 Browsec VPN Exntension 은 이후 실습 과정에서 브라우저의 출발지 국가 정보를 변경하여 AWS WAF 의 국가별 차단 기능을 점검하는데 사용됩니다.</p>
 
@@ -740,7 +763,9 @@
 
 <h3 id="user-agent-switcher-설치">User-Agent Switcher 설치</h3>
 <p>AWS WAF 에서는 웹 요청의 user-agent 헤더를 기준으로 트래픽을 허용/차단 하는 기능을 제공하고 있습니다. 랩 과정에서 특정 user-agent 값을 차단하는 환경을 가상으로 구성하기위하여 Chrome 에서 사용할 수 있는 &ldquo;User-Agent Switcher&rdquo; 을 설치하도록 하겠습니다.</p>
-<p><a href="https://chrome.google.com/webstore/search/browsec">Chrome Store</a> 링크를 클릭한 후 아래와 같이 User-Agent Switcher 을 선택한 후 &ldquo;Add to Chrome(또는 크롬에 추가)&rdquo; 버튼을 클릭합니다.</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/search/browsec">Chrome Store</a> 링크를 클릭한 후 아래와 같이 User-Agent Switcher 을 선택한 후 &ldquo;Add to Chrome(또는 크롬에 추가)&rdquo; 버튼을 클릭합니다.</li>
+</ul>
 <p><img src="../images/chrome_extension2.png" alt="Lab Diagram"></p>
 <p>Extension 설치를 확인하는 확인창이 뜨면 &ldquo;Add Extension&rdquo; 을 클릭하여 설치를 계속합니다.</p>
 <p>설치된 User-Agent Switcher Exntension 은 이후 실습 과정에서 브라우저의 요청 user-agent 헤더를 변경하여 AWS WAF 의 헤더 필터 기능을 점검하는데 사용됩니다.</p>
@@ -894,9 +919,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -904,19 +926,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -976,6 +985,38 @@
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -1168,7 +1209,7 @@
 			<a class="nav nav-prev" href="../pre/module2.html" title="DVWA 확인"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../attack.html" title="공격 테스트" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../pre/module4.html" title="AWS WAF Web ACL 구성" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

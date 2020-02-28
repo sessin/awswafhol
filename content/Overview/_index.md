@@ -15,8 +15,9 @@ pre = "<b>0. </b>"
 ##### [모듈 2.](/attack.html) **공격 테스트** : 잘 알려진 웹 공격 (SQLi , XSS expolit)으로 web application 을 공격해 봅니다. 
 ##### [모듈 3.](/mitigation.html) **AWS WAF를 이용한 방어** : AWS WAF의 AWS managed Rule 을 통해 기본적인 룰셋을 적용해보고 잘 방어가 되는지 테스트 해봅니다. 
 ##### [모듈 4.](/mitigation_deep.html) **AWS WAF를 이용한 방어(심화)** : AWS WAF의 custom Rule 을 통해 조금 더 복잡한 룰셋을 적용해보고 잘 방어가 되는지 테스트 해봅니다. 
-##### [모듈 5.](/post.html) **실습 구성 요소 삭제** : 생성했던 환경 자원들을 삭제합니다. 
+##### [모듈 5.](/logging.html) **AWS WAF 로깅** : AWS WAF 로그를 로깅하고 확인해 봅니다. 
+##### [모듈 6.](/post.html) **실습 구성 요소 삭제** : 생성했던 환경 자원들을 삭제합니다. 
 
 
 {{% button href="mailto:yijeong@amazon.com" icon="fas fa-bug" %}}Report an issue{{% /button %}}
-{{% button href="https://security.aws-korea.com" icon="fas fa-graduation-cap" %}}Learn more{{% /button %}}
+{{% button href="http://security.aws-korea.com" icon="fas fa-graduation-cap" %}}Learn more{{% /button %}}

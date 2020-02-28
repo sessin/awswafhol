@@ -6,7 +6,9 @@ pre = "<b>2.1 </b>"
 
 * * *
 
-  실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 SQL Injection 공격을 진행하도록 하겠습니다. SQL Injection 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 "SQL Injectin" 메뉴를 클릭한 후 우측의 "User ID" 를 입력하는 화면에서 아래의 SQL 구문을 입력한 후 "Submit" 버튼을 클릭합니다.
+실제로 발생하는 다양한 웹 서비스 공격방식 중 하나인 SQL Injection 공격을 진행하도록 하겠습니다. 
+  
+- SQL Injection 공격을 진행하기 위하여 DVWA 메뉴에서 아래와 같이 "SQL Injectin" 메뉴를 클릭한 후 우측의 "User ID" 를 입력하는 화면에서 아래의 SQL 구문을 입력한 후 "Submit" 버튼을 클릭합니다.
   
   ```
   ' OR 1=1 #  
@@ -19,7 +21,7 @@ pre = "<b>2.1 </b>"
  
  ![DVWA Setting](/images/DVWA_sqlinjection1.png)
 
- "Submit" 버튼을 클릭한 후 아래 화면과 같이 여러가지 계정 정보가 출력되는 것을 확인합니다.
+- "Submit" 버튼을 클릭한 후 아래 화면과 같이 여러가지 계정 정보가 출력되는 것을 확인합니다.
  ![DVWA Setting](/images/DVWA_sqlinjection2.png) 
  
  {{% notice warning %}}

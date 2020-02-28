@@ -28,8 +28,8 @@
       
       <guid>/mitigation_deep/module2.html</guid>
       <description>Attack !! 이번 실습에서는 가상의 상황을 가정해보도록 하겠습니다.
-당신은 팀의 보안 담당자 입니다. 서비스 하고 있는 웹 어플리케이션에서 최근에 일본으로부터 지속적으로 공격이 들어오고 있어 확인을 해보니 다음과 같은 특징이 있었습니다.
- 공격의 대부분은 일본에서 온 공격이다. 하지만 일본에서는 실제 고객들이 요청하는 정상 트래픽도 있다. 일본에서 오는 공격은 request body 가 비정상적으로 커서 100byte 이상이거나 header &amp;ldquo;x-value&amp;rdquo; 의 값이 &amp;ldquo;bot&amp;ldquo;이나 &amp;ldquo;BOT&amp;ldquo;으로 들어온다.  이제 당신은 새로운 규칙을 작성해서 정상 요청을 막지 않는 선에서 악의적인 공격을 막아야 합니다.</description>
+당신은 팀의 보안 담당자 입니다. 서비스 하고 있는 웹 어플리케이션에서 최근에 한국IP로 지속적으로 공격이 들어오고 있어 확인을 해보니 다음과 같은 특징이 있었습니다.
+ 공격의 대부분은 한국에서 온 공격이다. 하지만 한국에서는 실제 고객들이 요청하는 정상 트래픽도 있다. 한국에서 오는 공격은 request body 가 비정상적으로 커서 100byte 이상이거나 header &amp;ldquo;x-value&amp;rdquo; 의 값이 &amp;ldquo;bot&amp;ldquo;이나 &amp;ldquo;BOT&amp;ldquo;으로 들어온다.  이제 당신은 새로운 규칙을 작성해서 정상 요청을 막지 않는 선에서 악의적인 공격을 막아야 합니다.</description>
     </item>
     
   </channel>

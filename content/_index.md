@@ -11,4 +11,4 @@ weight = 1
 
 
 {{% button href="mailto:yijeong@amazon.com" icon="fas fa-bug" %}} Report an issue {{% /button %}}
-{{% button href="https://security.aws-korea.com" icon="fas fa-graduation-cap" %}} Learn more {{% /button %}}
+{{% button href="http://security.aws-korea.com" icon="fas fa-graduation-cap" %}} Learn more {{% /button %}}
