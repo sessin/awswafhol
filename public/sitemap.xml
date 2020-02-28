@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/mitigation/module1.html</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
   </url>
   
@@ -16,10 +20,6 @@
   
   <url>
     <loc>/logging/module1.html</loc>
-  </url>
-  
-  <url>
-    <loc>/mitigation/module1.html</loc>
   </url>
   
   <url>
@@ -40,11 +40,11 @@
   </url>
   
   <url>
-    <loc>/mitigation/module2.html</loc>
+    <loc>/post/module2.html</loc>
   </url>
   
   <url>
-    <loc>/post/module2.html</loc>
+    <loc>/mitigation/module2.html</loc>
   </url>
   
   <url>
@@ -86,16 +86,20 @@
   </url>
   
   <url>
-    <loc>/mitigation/module4.html</loc>
-  </url>
-  
-  <url>
     <loc>/mitigation_deep.html</loc>
     <lastmod>2019-10-15T15:09:31+09:00</lastmod>
   </url>
   
   <url>
+    <loc>/pre/module4.html</loc>
+  </url>
+  
+  <url>
     <loc>/logging.html</loc>
+  </url>
+  
+  <url>
+    <loc>/pre/module5.html</loc>
   </url>
   
   <url>

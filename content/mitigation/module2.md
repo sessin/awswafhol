@@ -1,68 +1,59 @@
 +++
-title = "AWS Managed Rule 추가"
+title = "custom rule 추가 1"
 weight = 2
 pre = "<b>3.2 </b>"
 +++
 
 * * *
-
- Web ACL 에 Rule 을 적용하기 위해서는 Rule 이나 Rule Group 을  생성하여야 합니다. 관리자는 적용하고자 하는 목적에 따라 AWS 가 관리하는 AWS Managed Rule 을 사용하거나 3rd Party 파트너가 제공하는 관리형 Rule Group 을 사용할 수도 있습니다. 아니면 Managed Rule 이나 Rule Group 을 사용하지 않고 공격 타입별로 각각의 Rule 을 생성한 후 Web ACL 에 적용할 수도 있습니다. 
-
- 여기서는 AWS Managed Rule을 적용해보도록 하겠습니다. 
-
-### AWS Managed Rule을 적용 
-
-- 실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 **"Asia Pacific(Seoul)"** 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.
+ 이번에는 공격 타입 별 Custom Rule을 작성하여 적용해보록 하겠습니다. 
  
- {{% notice info %}}
- Web ACL 메뉴를 클릭하면 선택되어 있는 리전이 Seoul Region 이 아닐 수도 있으므로 반드시 확인하시기 바랍니다.
- {{% /notice %}}
-
- ![DVWA Setting](/images/rulegroup_1.png)
+ 첫번째로 AWS WAF 에서 제공하는 국가별 IP 정보를 기준으로 특정 국가에서 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다. 
  
-- 선택한 Web ACL 의 상세 화면 중 상단의 "Rules" 를 선택한 후 화면 우측의 "Add rules" 메뉴를 클릭합니다. 이 메뉴를 클릭하면 하위 메뉴를 확인할 수 있는데 하위 메뉴 중 "Add managed rule groups" 메뉴를 클릭합니다. 이 메뉴를 선택하면 AWS Managed Rule 혹은 3rd Party 파트너가 제공하는 관리형 Rule Group 을 Web ACL 에 추가할 수 있습니다.
 
- ![DVWA Setting](/images/rulegroups_2.png) 
+### Chrome Extension 설정 
 
-- 가장 상단의 **AWS managed rule groups** 를 클릭하면 적용가능한 rule group들이 나타납니다. 
-- 이중에서 **Core rule set** 과 **SQL database** 에 대해 "Add to web ACL"을 클릭하고 하단의 "Add rules"를 클릭합니다.  
+차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 특정 국가에서 발생되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
 
- ![DVWA Setting](/images/rulegroups_3.png) 
+- 크롬 브라우저에서 Browsec VPN 을 선택한 후 아래와 같이 "OFF" 를 "On" 으로 변경한 후 "Change" 버튼을 클릭하여 사용하고자하는 국가를 선택합니다.
+
+ ![DVWA Setting](/images/browsec1.png)
 
  {{% notice info %}}
- **Core rule set** rule group 에는 일반적으로 웹 애플리케이션에 적용할 수 있는 Rule이 포함되어 있습니다. 이러한 규칙은 OWASP 발행물 및 수많은 CVE(일반적인 취약성 및 노출도)에 설명된 취약성을 포함하여 광범위한 취약성을 악용하는 일이 없도록 보호합니자세한 사항은 [AWS DOCS](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html)를 참고해주시기 바랍니다. 
+ Browsec 메뉴에서 Premium 으로 표기되어 있는 국가는 별도의 과금이 발생하는 국가이니 실습 과정에서는 반드시 무료 국가를 선택하시기 바랍니다.
  {{% /notice %}}
 
- {{% notice info %}}
- **SQL database** rule group 에는 SQL 주입 공격과 같은 SQL 데이터베이스 악용과 관련된 요청 패턴을 차단하는 Rule이 포함되어 있습니다. 이렇게 하면 승인되지 않은 쿼리가 원격으로 삽입되는 것을 방지할 수 있습니다. 자세한 사항은 [AWS DOCS](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html)를 참고해주시기 바랍니다. 
- {{% /notice %}}
+- 본 실습에서는 Singapore 를 선택하도록 하겠습니다.
+ ![DVWA Setting](/images/browsec2.png)
 
-**Set rule priority**에서는 기본값을 그대로 두고 "save" 버튼을 클릭하여 내용을 저장합니다. 
-다음과 같이 정상적으로 추가된 것을 확인할 수 있습니다. 
+- 이제 Browsec 이 "On" 되어 있는 상태에서는 브라우저에서 발생하는 모든 트래픽은 Singapore 에서 발생되는 것처럼 트래픽이 전송되게 됩니다. 이 상태에서 DVWA 페이지가 정상적으로 접속이 되는지 확인합니다.
 
- ![DVWA Setting](/images/rulegroups_4.png) 
+### Rule 추가
+
+- 페이지가 정상적으로 접속이 된다면 이번에는 Singapore 에서 유입되는 트래픽을 차단하는 Rule을 Web ACL 에 추가하도록 하겠습니다. Web ACL 에 새로운 Rule 을 추가하기 위하여 아래와 같이 선택한 Web ACL 의 상세 화면 중 상단의 "Rules" 를 선택한 후 화면 우측의 "Add rules" 메뉴를 클릭합니다. 이 메뉴를 클릭하면 하위 메뉴를 확인할 수 있는데 하위 메뉴 중 "Add my own rules and rule groups" 메뉴를 클릭합니다. 이 메뉴를 선택하면 새로운 WAF Rule 을 생성하거나 미리 만들어 둔 Rule Group 을 Web ACL 에 추가할 수 있습니다.
+
+ ![DVWA Setting](/images/country_block1.png)
  
-
-### 적용한 Rule 테스트 
-
-적용한 Rule들이 정상적으로 동작을 하는지 확인하기 위해 앞서 모듈 1에서 구성했던 DVWA 웹에 접속해서 모듈 2에서 실행했던 **SQL injection** 과 **XSS exploit**를 재시도 해봅니다. 
+- 새로운 Rule 을 생성하기 위하여 다음과 같이 여러 옵션들을 정의합니다. 아래 3가지를 제외한 나머지는 모두 기본값으로 선택합니다.
+  1. Name = 임의의 이름 입력 (ex. SG-Block)
+  2. Inspect = Originates from a country in 선택
+  3. Country Codes = Singapore - SG 선택
+ ![DVWA Setting](/images/country_block2.png)
  
-- 모든 설정이 정상적으로 이뤄졌다면 아래와 같이 이전 과정에서 차단되지 않았던 **SQL injection** 구문이 "403 Forbidden" 메시지와 함께 차단된 것을 확인할 수 있습니다.
+- 생성하려고하는 Rule 의 Default Action 이 Block 인 것을 확인한 후 "Add Rule" 버튼을 클릭합니다.
+ ![DVWA Setting](/images/rulegroup_4.png)
 
-  ```
-  ' OR 1=1 #  
-  ```
-  
- ![DVWA Setting](/images/DVWA_sqlinjection1.png)
+- 정상적으로 진행되는 경우 아래와 같이 새로운 Rule 생성이 되고 "Set rule priority" 화면으로 진행이 되게 되는데 별도의 Priority 설정이 필요 없으므로 "Save" 버튼을 클릭합니다.
+ ![DVWA Setting](/images/country_block3.png)
 
+- Web ACLs 화면에서 "Rules" 탭을 클릭하여 새로운 Rule 이 생성된 것을 확인합니다. 아래 화면과 같이 생성된 Rule 이 901 WCU 을 점유하는 것을 확인합니다.
+ ![DVWA Setting](/images/country_block4.png)
+ 
+### 적용한 Rule 테스트
+
+- 이제 Singapore 에서 발생하는 트래픽을 차단할 수 있는 Rule 이 Web ACL 에 추가되었으므로 크롬 브라우저에서 다시 한 번 DVWA 로 접속해보도록 하겠습니다.
+ 
+- 모든 설정이 정상적으로 이뤄졌다면 아래와 같이 "403 Forbidden" 메시지와 함께 차단된 것을 확인할 수 있습니다.
  ![DVWA Setting](/images/blocked.png)
 
-- 모든 설정이 정상적으로 이뤄졌다면 아래와 같이 이전 과정에서 차단되지 않았던 **XSS exploit** 구문 역시 "403 Forbidden" 메시지와 함께 차단된 것을 확인할 수 있습니다.
-
-  ```
-  <script>alert(document.cookie)</script>
-  ```
-  
- ![DVWA Setting](/images/DVWA_xss1.png)
-
- ![DVWA Setting](/images/blocked.png)
+- 국가별 차단 기능을 확인하였으므로 Browsec 을 아래와 같이 "Off" 하도록 합니다.
+ ![DVWA Setting](/images/country_block5.png) 

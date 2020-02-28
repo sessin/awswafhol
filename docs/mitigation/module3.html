@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 <link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 
-  <title>custom rule 추가 1 :: AWS WAF Workshop</title>
+  <title>custom rule 추가 2 :: AWS WAF Workshop</title>
 
   
   <link href="../css/nucleus.css" rel="stylesheet">
@@ -234,6 +234,44 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module4.html" title="AWS WAF Web ACL 구성" class="dd-item ">
+        <a href="../pre/module4.html">
+        <b>1.4 </b>AWS WAF Web ACL 구성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module5.html" title="AWS WAF 로깅 활성화" class="dd-item ">
+        <a href="../pre/module5.html">
+        <b>1.5 </b>AWS WAF 로깅 활성화
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -343,9 +381,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module1.html" title="Web ACL 생성" class="dd-item ">
+      <li data-nav-id="/mitigation/module1.html" title="AWS Managed Rule 추가" class="dd-item ">
         <a href="../mitigation/module1.html">
-        <b>3.1 </b>Web ACL 생성
+        <b>3.1 </b>AWS Managed Rule 추가
         
         </a>
     </li>
@@ -362,9 +400,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module2.html" title="AWS Managed Rule 추가" class="dd-item ">
+      <li data-nav-id="/mitigation/module2.html" title="custom rule 추가 1" class="dd-item ">
         <a href="../mitigation/module2.html">
-        <b>3.2 </b>AWS Managed Rule 추가
+        <b>3.2 </b>custom rule 추가 1
         
         </a>
     </li>
@@ -381,28 +419,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 1" class="dd-item active">
+      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 2" class="dd-item active">
         <a href="../mitigation/module3.html">
-        <b>3.3 </b>custom rule 추가 1
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mitigation/module4.html" title="custom rule 추가 2" class="dd-item ">
-        <a href="../mitigation/module4.html">
-        <b>3.4 </b>custom rule 추가 2
+        <b>3.3 </b>custom rule 추가 2
         
         </a>
     </li>
@@ -496,13 +515,13 @@
  
   
     
-    <li data-nav-id="/logging.html" title="WAF 로깅" class="dd-item 
+    <li data-nav-id="/logging.html" title="AWS WAF 로깅 확인" class="dd-item 
         
         
         
         ">
       <a href="../logging.html">
-          <b>5. </b>WAF 로깅
+          <b>5. </b>AWS WAF 로깅 확인
           
       </a>
       
@@ -689,7 +708,7 @@
           
           
           
-          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>AWS WAF를 이용한 방어</a> > custom rule 추가 1
+          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>AWS WAF를 이용한 방어</a> > custom rule 추가 2
           
           
           
@@ -705,8 +724,6 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#chrome-extension-설정">Chrome Extension 설정</a></li>
-        <li><a href="#rule-추가">Rule 추가</a></li>
         <li><a href="#적용한-rule-테스트">적용한 Rule 테스트</a></li>
       </ul>
     </li>
@@ -722,73 +739,68 @@
 
       
         <div id="body-inner">
-          <h1>custom rule 추가 1</h1>
+          <h1>custom rule 추가 2</h1>
           
           
 
 
 <hr>
-<p>이번에는 공격 타입 별 Custom Rule을 작성하여 적용해보록 하겠습니다.</p>
-<p>첫번째로 AWS WAF 에서 제공하는 국가별 IP 정보를 기준으로 특정 국가에서 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다.</p>
-<h3 id="chrome-extension-설정">Chrome Extension 설정</h3>
-<p>차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 특정 국가에서 발생되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.</p>
-<ul>
-<li>크롬 브라우저에서 Browsec VPN 을 선택한 후 아래와 같이 &ldquo;OFF&rdquo; 를 &ldquo;On&rdquo; 으로 변경한 후 &ldquo;Change&rdquo; 버튼을 클릭하여 사용하고자하는 국가를 선택합니다.</li>
-</ul>
-<p><img src="../images/browsec1.png" alt="DVWA Setting"></p>
-
-<div class="notices info" ><p>Browsec 메뉴에서 Premium 으로 표기되어 있는 국가는 별도의 과금이 발생하는 국가이니 실습 과정에서는 반드시 무료 국가를 선택하시기 바랍니다.</p>
-</div>
-
+<p>Custom Rule 적용 실습 두번째로, AWS WAF 에서 제공하는 문자열 일치 기반으로 특정 user-agent 로 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다.</p>
 <ul>
 <li>
-<p>본 실습에서는 Singapore 를 선택하도록 하겠습니다.
-<img src="../images/browsec2.png" alt="DVWA Setting"></p>
+<p>차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 user-agent 로 유입되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.</p>
 </li>
 <li>
-<p>이제 Browsec 이 &ldquo;On&rdquo; 되어 있는 상태에서는 브라우저에서 발생하는 모든 트래픽은 Singapore 에서 발생되는 것처럼 트래픽이 전송되게 됩니다. 이 상태에서 DVWA 페이지가 정상적으로 접속이 되는지 확인합니다.</p>
+<p>크롬 브라우저에서 User-Agent Switcher 을 선택한 후 아래와 같이 &ldquo;iOS&rdquo; 와 &ldquo;iPhone6&quot;을 차례대로 선택합니다.
+<img src="../images/uaswitcher1.png" alt="DVWA Setting"></p>
+</li>
+<li>
+<p>이제 이 상태에서는 브라우저에서 발생하는 모든 트래픽은 iPhone6 라는 user-agent를 헤더로 트래픽이 전송되게 됩니다. 이 상태에서 DVWA 페이지가 정상적으로 접속이 되는지 확인합니다.</p>
+</li>
+<li>
+<p>페이지가 정상적으로 접속이 된다면 이번에는 해당 user-agent 로 유입되는 트래픽을 차단하는 정책을 Web ACL 에 추가하도록 하겠습니다. Web ACL 에 새로운 Rule 을 추가하기 위하여 아래와 같이 선택한 Web ACL 의 상세 화면 중 상단의 &ldquo;Rules&rdquo; 를 선택한 후 화면 우측의 &ldquo;Add rules&rdquo; 메뉴를 클릭합니다. 이 메뉴를 클릭하면 하위 메뉴를 확인할 수 있는데 하위 메뉴 중 &ldquo;Add my own rules and rule groups&rdquo; 메뉴를 클릭합니다.</p>
 </li>
 </ul>
-<h3 id="rule-추가">Rule 추가</h3>
+<p><img src="../images/uaswitcher_block1.png" alt="DVWA Setting"></p>
 <ul>
-<li>페이지가 정상적으로 접속이 된다면 이번에는 Singapore 에서 유입되는 트래픽을 차단하는 Rule을 Web ACL 에 추가하도록 하겠습니다. Web ACL 에 새로운 Rule 을 추가하기 위하여 아래와 같이 선택한 Web ACL 의 상세 화면 중 상단의 &ldquo;Rules&rdquo; 를 선택한 후 화면 우측의 &ldquo;Add rules&rdquo; 메뉴를 클릭합니다. 이 메뉴를 클릭하면 하위 메뉴를 확인할 수 있는데 하위 메뉴 중 &ldquo;Add my own rules and rule groups&rdquo; 메뉴를 클릭합니다. 이 메뉴를 선택하면 새로운 WAF Rule 을 생성하거나 미리 만들어 둔 Rule Group 을 Web ACL 에 추가할 수 있습니다.</li>
-</ul>
-<p><img src="../images/country_block1.png" alt="DVWA Setting"></p>
-<ul>
-<li>
-<p>새로운 Rule 을 생성하기 위하여 다음과 같이 여러 옵션들을 정의합니다. 아래 3가지를 제외한 나머지는 모두 기본값으로 선택합니다.</p>
+<li>새로운 Rule 을 생성하기 위하여 다음과 같이 여러 옵션들을 정의합니다. 아래 3가지를 제외한 나머지는 모두 기본값으로 선택합니다.
 <ol>
-<li>Name = 임의의 이름 입력 (ex. SG-Block)</li>
-<li>Inspect = Originates from a country in 선택</li>
-<li>Country Codes = Singapore - SG 선택
-<img src="../images/country_block2.png" alt="DVWA Setting"></li>
+<li>Name = 임의의 이름 입력 (ex. <strong>iphone-Block</strong>)</li>
+<li>Inspect = <strong>Header</strong> 선택</li>
+<li>Header Field Name = <strong>User-Agent</strong> 입력</li>
+<li>Match Type = <strong>Contains String</strong> 선택</li>
+<li>String to match = <strong>iphone</strong> 입력</li>
+<li>Text Transformation = <strong>Lowercase</strong> 선택</li>
 </ol>
 </li>
+</ul>
+<p><img src="../images/uaswitcher_block2.png" alt="DVWA Setting"></p>
+<ul>
 <li>
 <p>생성하려고하는 Rule 의 Default Action 이 Block 인 것을 확인한 후 &ldquo;Add Rule&rdquo; 버튼을 클릭합니다.
 <img src="../images/rulegroup_4.png" alt="DVWA Setting"></p>
 </li>
 <li>
 <p>정상적으로 진행되는 경우 아래와 같이 새로운 Rule 생성이 되고 &ldquo;Set rule priority&rdquo; 화면으로 진행이 되게 되는데 별도의 Priority 설정이 필요 없으므로 &ldquo;Save&rdquo; 버튼을 클릭합니다.
-<img src="../images/country_block3.png" alt="DVWA Setting"></p>
+<img src="../images/uaswitcher_block3.png" alt="DVWA Setting"></p>
 </li>
 <li>
-<p>Web ACLs 화면에서 &ldquo;Rules&rdquo; 탭을 클릭하여 새로운 Rule 이 생성된 것을 확인합니다. 아래 화면과 같이 생성된 Rule 이 901 WCU 을 점유하는 것을 확인합니다.
-<img src="../images/country_block4.png" alt="DVWA Setting"></p>
+<p>Web ACLs 화면에서 &ldquo;Rules&rdquo; 탭을 클릭하여 새로운 Rule 이 생성된 것을 확인합니다. 아래 화면과 같이 생성된 Rule 이 921 WCU 을 점유하는 것을 확인합니다.
+<img src="../images/uaswitcher_block4.png" alt="DVWA Setting"></p>
 </li>
 </ul>
 <h3 id="적용한-rule-테스트">적용한 Rule 테스트</h3>
 <ul>
 <li>
-<p>이제 Singapore 에서 발생하는 트래픽을 차단할 수 있는 Rule 이 Web ACL 에 추가되었으므로 크롬 브라우저에서 다시 한 번 DVWA 로 접속해보도록 하겠습니다.</p>
+<p>이제 특정 user-agent로 발생하는 트래픽을 차단할 수 있는 Rule 이 Web ACL 에 추가되었으므로 크롬 브라우저에서 다시 한 번 DVWA 로 접속해보도록 하겠습니다.</p>
 </li>
 <li>
 <p>모든 설정이 정상적으로 이뤄졌다면 아래와 같이 &ldquo;403 Forbidden&rdquo; 메시지와 함께 차단된 것을 확인할 수 있습니다.
 <img src="../images/blocked.png" alt="DVWA Setting"></p>
 </li>
 <li>
-<p>국가별 차단 기능을 확인하였으므로 Browsec 을 아래와 같이 &ldquo;Off&rdquo; 하도록 합니다.
-<img src="../images/country_block5.png" alt="DVWA Setting"></p>
+<p>문자열 일치 기반 차단 기능을 확인하였으므로 User-Agent Switcher 를 아래와 같이 원복 합니다.
+<img src="../images/uaswitcher_block5.png" alt="DVWA Setting"></p>
 </li>
 </ul>
 
@@ -936,22 +948,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1032,11 +1028,26 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1054,8 +1065,22 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1075,6 +1100,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1208,10 +1236,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="../mitigation/module2.html" title="AWS Managed Rule 추가"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="../mitigation/module2.html" title="custom rule 추가 1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../mitigation/module4.html" title="custom rule 추가 2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../mitigation_deep.html" title="AWS WAF를 이용한 방어 (심화)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

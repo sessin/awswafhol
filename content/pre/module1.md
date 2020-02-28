@@ -17,6 +17,8 @@ pre = "<b>1.1 </b>"
 |VPC Subnet|	PublicSubnet	|10.10.0.0/18|
 |VPC Subnet|	PrivateSubnet	|10.10.64.0/18|
 |Kinesis Firehose|	aws-waf-logs-test	| AWS WAF 로그 스트림|
+|S3 Bucket|	mydvwa-xxxxxxxx	| AWS WAF 로그 버킷|
+
 |기타 서비스|	Elastic IP, Route table, Security Groups, Network ACL, IAM Role 등|
 
 

@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 <link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
 
-  <title>Web ACL 생성 :: AWS WAF Workshop</title>
+  <title>AWS Managed Rule 추가 :: AWS WAF Workshop</title>
 
   
   <link href="../css/nucleus.css" rel="stylesheet">
@@ -234,6 +234,44 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module4.html" title="AWS WAF Web ACL 구성" class="dd-item ">
+        <a href="../pre/module4.html">
+        <b>1.4 </b>AWS WAF Web ACL 구성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module5.html" title="AWS WAF 로깅 활성화" class="dd-item ">
+        <a href="../pre/module5.html">
+        <b>1.5 </b>AWS WAF 로깅 활성화
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -343,9 +381,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module1.html" title="Web ACL 생성" class="dd-item active">
+      <li data-nav-id="/mitigation/module1.html" title="AWS Managed Rule 추가" class="dd-item active">
         <a href="../mitigation/module1.html">
-        <b>3.1 </b>Web ACL 생성
+        <b>3.1 </b>AWS Managed Rule 추가
         
         </a>
     </li>
@@ -362,9 +400,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module2.html" title="AWS Managed Rule 추가" class="dd-item ">
+      <li data-nav-id="/mitigation/module2.html" title="custom rule 추가 1" class="dd-item ">
         <a href="../mitigation/module2.html">
-        <b>3.2 </b>AWS Managed Rule 추가
+        <b>3.2 </b>custom rule 추가 1
         
         </a>
     </li>
@@ -381,28 +419,9 @@
  
   
     
-      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 1" class="dd-item ">
+      <li data-nav-id="/mitigation/module3.html" title="custom rule 추가 2" class="dd-item ">
         <a href="../mitigation/module3.html">
-        <b>3.3 </b>custom rule 추가 1
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/mitigation/module4.html" title="custom rule 추가 2" class="dd-item ">
-        <a href="../mitigation/module4.html">
-        <b>3.4 </b>custom rule 추가 2
+        <b>3.3 </b>custom rule 추가 2
         
         </a>
     </li>
@@ -496,13 +515,13 @@
  
   
     
-    <li data-nav-id="/logging.html" title="WAF 로깅" class="dd-item 
+    <li data-nav-id="/logging.html" title="AWS WAF 로깅 확인" class="dd-item 
         
         
         
         ">
       <a href="../logging.html">
-          <b>5. </b>WAF 로깅
+          <b>5. </b>AWS WAF 로깅 확인
           
       </a>
       
@@ -689,7 +708,7 @@
           
           
           
-          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>AWS WAF를 이용한 방어</a> > Web ACL 생성
+          <a href='../'>AWS WAF 공격 및 방어 실습</a> > <a href='../mitigation.html'>AWS WAF를 이용한 방어</a> > AWS Managed Rule 추가
           
           
           
@@ -701,7 +720,16 @@
           
           <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#aws-managed-rule을-적용">AWS Managed Rule을 적용</a></li>
+        <li><a href="#적용한-rule-테스트">적용한 Rule 테스트</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -712,38 +740,61 @@
 
       
         <div id="body-inner">
-          <h1>Web ACL 생성</h1>
+          <h1>AWS Managed Rule 추가</h1>
           
           
 
 
 <hr>
-<p>이번에는 웹 공격을 방어하기 위하여 AWS WAF 를 구성해보도록 하겠습니다.</p>
-<p>AWS WAF 를 구성하는 방법은 여러가지가 있지만 본 실습에서는 Web ACL 을 먼저 생성한 후 각 공격 유형별로 Rule 을 생성하여 Web ACL 에 추가하는 방법을 따르도록 하겠습니다.</p>
+<p>Web ACL 에 Rule 을 적용하기 위해서는 Rule 이나 Rule Group 을  생성하여야 합니다. 관리자는 적용하고자 하는 목적에 따라 AWS 가 관리하는 AWS Managed Rule 을 사용하거나 3rd Party 파트너가 제공하는 관리형 Rule Group 을 사용할 수도 있습니다. 아니면 Managed Rule 이나 Rule Group 을 사용하지 않고 공격 타입별로 각각의 Rule 을 생성한 후 Web ACL 에 적용할 수도 있습니다.</p>
+<p>여기서는 AWS Managed Rule을 적용해보도록 하겠습니다.</p>
+<h3 id="aws-managed-rule을-적용">AWS Managed Rule을 적용</h3>
+<ul>
+<li>실습에 사용할 새로운 Rule 을 Web ACL 에 추가하기 위하여 좌측의 AWS WAF 메뉴에서 Web ACL 을 선택합니다. 리전이 <strong>&ldquo;Asia Pacific(Seoul)&quot;</strong> 로 선택되어 있는 것을 확인한 후 하단의 Web ACL 리스트 중 이전 과정에서 생성한 Web ACL 을 클릭합니다.</li>
+</ul>
 
-<div class="notices info" ><p>현재 AWS WAF 는 기존에 제공되던 AWS WAF 메뉴와 함께 새로운 AWS WAF v2 메뉴가 제공되고 있습니다. 본 실습에서는 AWS WAF v2 를 기준으로 진행되기 때문에 반드시 새로운 AWS WAF 메뉴를 선택하신 후 진행하시기 바랍니다.</p>
+<div class="notices info" ><p>Web ACL 메뉴를 클릭하면 선택되어 있는 리전이 Seoul Region 이 아닐 수도 있으므로 반드시 확인하시기 바랍니다.</p>
 </div>
 
-<p>아래와 같이 AWS WAF 메뉴에서 Web ACL 을 선택한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl0.png" alt="DVWA Setting"></p>
-<p>먼저 화면 중간의 &ldquo;Resource Type&rdquo; 을 &ldquo;Regional Resources&rdquo; 로 선택한 후 &ldquo;Region&rdquo; 을 &ldquo;Asia Pacific(Seoul)&rdquo; 로 선택하시기 바랍니다. Region 선택이 끝나신 후 &ldquo;Name&rdquo; 에 적당한 이름을 입력하시기 바랍니다. &ldquo;Name&rdquo; 을 입력한 후 TAB 을 누르시면 &ldquo;Cloudwatch Metric Name&rdquo; 이 Web ACL Name 과 동일한 이름으로 자동입력 됩니다.
-<img src="../images/waf_create_acl1.png" alt="DVWA Setting"></p>
-<p>생성되는 WebACL 에 리소스를 할당하기 위하여 &ldquo;Add AWS Resources&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl2.png" alt="DVWA Setting"></p>
-<p>&ldquo;Add AWS Resources&rdquo; 화면에서 이전 과정에서 생성되었던 ALB 를 선택한 후 &ldquo;Add&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl3.png" alt="DVWA Setting"></p>
-<p>아래와 같이 ALB 가 정상적으로 추가된 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl4.png" alt="DVWA Setting"></p>
-<p>Rule 설정은 이후 과정에서 진행할 것이므로 그대로두고 화면 하단의 &ldquo;Default Action&rdquo; 이 &ldquo;Allow&rdquo; 로 되어 있는 것을 확인한 후 &ldquo;Next&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl5.png" alt="DVWA Setting"></p>
-<p>설정된 Rule 없으므로 &ldquo;Set Rule Priority&rdquo; 에서 &ldquo;Next&rdquo; 를 클릭합니다.
-<img src="../images/waf_create_acl6.png" alt="DVWA Setting"></p>
-<p>&ldquo;Configure Metrics&rdquo; 에서도 &ldquo;Next&rdquo; 를 클릭합니다.
-<img src="../images/waf_create_acl7.png" alt="DVWA Setting"></p>
-<p>지금까지 설정한 내용이 모두 맞는지 확인한 후 &ldquo;Create Web ACL&rdquo; 버튼을 클릭합니다.
-<img src="../images/waf_create_acl8.png" alt="DVWA Setting"></p>
-<p>정상적으로 진행되었다면 아래 화면과 같이 새로운 Web ACL 이 생성되는 것을 확인할 수 있습니다.
-<img src="../images/waf_create_acl9.png" alt="DVWA Setting"></p>
+<p><img src="../images/rulegroup_1.png" alt="DVWA Setting"></p>
+<ul>
+<li>선택한 Web ACL 의 상세 화면 중 상단의 &ldquo;Rules&rdquo; 를 선택한 후 화면 우측의 &ldquo;Add rules&rdquo; 메뉴를 클릭합니다. 이 메뉴를 클릭하면 하위 메뉴를 확인할 수 있는데 하위 메뉴 중 &ldquo;Add managed rule groups&rdquo; 메뉴를 클릭합니다. 이 메뉴를 선택하면 AWS Managed Rule 혹은 3rd Party 파트너가 제공하는 관리형 Rule Group 을 Web ACL 에 추가할 수 있습니다.</li>
+</ul>
+<p><img src="../images/rulegroups_2.png" alt="DVWA Setting"></p>
+<ul>
+<li>가장 상단의 <strong>AWS managed rule groups</strong> 를 클릭하면 적용가능한 rule group들이 나타납니다.</li>
+<li>이중에서 <strong>Core rule set</strong> 과 <strong>SQL database</strong> 에 대해 &ldquo;Add to web ACL&quot;을 클릭하고 하단의 &ldquo;Add rules&quot;를 클릭합니다.</li>
+</ul>
+<p><img src="../images/rulegroups_3.png" alt="DVWA Setting"></p>
+
+<div class="notices info" ><p><strong>Core rule set</strong> rule group 에는 일반적으로 웹 애플리케이션에 적용할 수 있는 Rule이 포함되어 있습니다. 이러한 규칙은 OWASP 발행물 및 수많은 CVE(일반적인 취약성 및 노출도)에 설명된 취약성을 포함하여 광범위한 취약성을 악용하는 일이 없도록 보호합니자세한 사항은 <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html">AWS DOCS</a>를 참고해주시기 바랍니다.</p>
+</div>
+
+
+<div class="notices info" ><p><strong>SQL database</strong> rule group 에는 SQL 주입 공격과 같은 SQL 데이터베이스 악용과 관련된 요청 패턴을 차단하는 Rule이 포함되어 있습니다. 이렇게 하면 승인되지 않은 쿼리가 원격으로 삽입되는 것을 방지할 수 있습니다. 자세한 사항은 <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html">AWS DOCS</a>를 참고해주시기 바랍니다.</p>
+</div>
+
+<p><strong>Set rule priority</strong>에서는 기본값을 그대로 두고 &ldquo;save&rdquo; 버튼을 클릭하여 내용을 저장합니다.
+다음과 같이 정상적으로 추가된 것을 확인할 수 있습니다.</p>
+<p><img src="../images/rulegroups_4.png" alt="DVWA Setting"></p>
+<h3 id="적용한-rule-테스트">적용한 Rule 테스트</h3>
+<p>적용한 Rule들이 정상적으로 동작을 하는지 확인하기 위해 앞서 모듈 1에서 구성했던 DVWA 웹에 접속해서 모듈 2에서 실행했던 <strong>SQL injection</strong> 과 <strong>XSS exploit</strong>를 재시도 해봅니다.</p>
+<ul>
+<li>
+<p>모든 설정이 정상적으로 이뤄졌다면 아래와 같이 이전 과정에서 차단되지 않았던 <strong>SQL injection</strong> 구문이 &ldquo;403 Forbidden&rdquo; 메시지와 함께 차단된 것을 확인할 수 있습니다.</p>
+<pre><code>' OR 1=1 #  
+</code></pre></li>
+</ul>
+<p><img src="../images/DVWA_sqlinjection1.png" alt="DVWA Setting"></p>
+<p><img src="../images/blocked.png" alt="DVWA Setting"></p>
+<ul>
+<li>
+<p>모든 설정이 정상적으로 이뤄졌다면 아래와 같이 이전 과정에서 차단되지 않았던 <strong>XSS exploit</strong> 구문 역시 &ldquo;403 Forbidden&rdquo; 메시지와 함께 차단된 것을 확인할 수 있습니다.</p>
+<pre><code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;
+</code></pre></li>
+</ul>
+<p><img src="../images/DVWA_xss1.png" alt="DVWA Setting"></p>
+<p><img src="../images/blocked.png" alt="DVWA Setting"></p>
 
 
 <footer class=" footline" >
@@ -889,22 +940,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -958,6 +993,54 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -977,22 +1060,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1164,7 +1231,7 @@
 			<a class="nav nav-prev" href="../mitigation.html" title="AWS WAF를 이용한 방어"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="../mitigation/module2.html" title="AWS Managed Rule 추가" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="../mitigation/module2.html" title="custom rule 추가 1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

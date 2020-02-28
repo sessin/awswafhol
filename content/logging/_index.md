@@ -1,5 +1,5 @@
 +++
-title = "WAF 로깅"
+title = "AWS WAF 로깅 확인"
 chapter = true
 weight = 6
 pre = "<b>5. </b>"
