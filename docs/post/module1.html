@@ -7,7 +7,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="generator" content="Hugo 0.64.1" />
+  <meta name="generator" content="Hugo 0.58.3" />
   <meta name="description" content="AWS Korea WAF Workshop">
 <meta name="author" content="Eunsu Shin">
 
@@ -675,18 +675,6 @@
         <div id="top-bar">
           
           
-          
-          
-          <div id="top-github-link">
-            <a class="github-link" title='' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/post/module1.md"
-              target="blank">
-              <i class="fas fa-code-branch"></i>
-              <span id="top-github-link-text"></span>
-            </a>
-          </div>
-          
-          
-          
           <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
             <span id="sidebar-toggle-span">
               <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
@@ -721,13 +709,15 @@
           <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#마치기-전에-복습">마치기 전에 복습</a></li>
-      </ul>
-    </li>
-  </ul>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#마치기-전에-복습">마치기 전에 복습</a></li>
+</ul></li>
+</ul></li>
+</ul>
 </nav>
     </div>
 </div>
@@ -744,28 +734,26 @@
           
 
 
-<hr>
+
+
+<hr />
+
 <h3 id="마치기-전에-복습">마치기 전에 복습</h3>
+
 <p>오늘 진행한 실습은 다음과 같은 절차로 이루어졌습니다.</p>
+
 <ol>
-<li>
-<p>위협 요인이 내재된 인프라 환경을 구성하기 위해 CloudFormation 템플릿을 실행했습니다. 템플릿 실행을 통해 생성되는 리소스는 VPC (Virtual Private Cloud), ALB (Application Load Balancer), EC2인스턴스 (Linux, Apache, MySQL, PHP), Kinesis Firehose, S3 bucket 등 입니다.</p>
-</li>
-<li>
-<p>AWS WAF가 적용되지 않은 환경에서 웹 취약점 (SQL Injection, XSS)을 확인했습니다.</p>
-</li>
-<li>
-<p>AWS Managed Rule과 custom Rule을 이용하여 다양한 Rule들을 작성하고 적용해 보았습니다.</p>
-</li>
-<li>
-<p>AWS WAF가 적용된 상태에서 1) SQL Injection, 2) XSS, 3) Bad bot 공격 차단 테스트를 수행해보고 정상적으로 차단이 되는 것으로 확인했습니다.</p>
-</li>
-<li>
-<p>AWS WAF 로그를 보고 어떤 내역들이 로깅되는지 확인해보았습니다.</p>
-</li>
-<li>
-<p>실습이 끝난 후 CloudFormation을 삭제할 예정입니다.</p>
-</li>
+<li><p>위협 요인이 내재된 인프라 환경을 구성하기 위해 CloudFormation 템플릿을 실행했습니다. 템플릿 실행을 통해 생성되는 리소스는 VPC (Virtual Private Cloud), ALB (Application Load Balancer), EC2인스턴스 (Linux, Apache, MySQL, PHP), Kinesis Firehose, S3 bucket 등 입니다.</p></li>
+
+<li><p>AWS WAF가 적용되지 않은 환경에서 웹 취약점 (SQL Injection, XSS)을 확인했습니다.</p></li>
+
+<li><p>AWS Managed Rule과 custom Rule을 이용하여 다양한 Rule들을 작성하고 적용해 보았습니다.</p></li>
+
+<li><p>AWS WAF가 적용된 상태에서 1) SQL Injection, 2) XSS, 3) Bad bot 공격 차단 테스트를 수행해보고 정상적으로 차단이 되는 것으로 확인했습니다.</p></li>
+
+<li><p>AWS WAF 로그를 보고 어떤 내역들이 로깅되는지 확인해보았습니다.</p></li>
+
+<li><p>실습이 끝난 후 CloudFormation을 삭제할 예정입니다.</p></li>
 </ol>
 
 

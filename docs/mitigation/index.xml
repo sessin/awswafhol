@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS WAF를 이용한 방어 on AWS WAF Workshop</title>
@@ -41,8 +41,8 @@ Chrome Extension 설정 차단 설정을 하기에 앞서 사용자의 PC 에서
       
       <guid>/mitigation/module3.html</guid>
       <description>Custom Rule 적용 실습 두번째로, AWS WAF 에서 제공하는 문자열 일치 기반으로 특정 user-agent 로 유입되는 트래픽을 차단하는 실습을 진행하도록 하겠습니다.
-  차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 user-agent 로 유입되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
-  크롬 브라우저에서 User-Agent Switcher 을 선택한 후 아래와 같이 &amp;ldquo;iOS&amp;rdquo; 와 &amp;ldquo;iPhone6&amp;quot;을 차례대로 선택합니다.   이제 이 상태에서는 브라우저에서 발생하는 모든 트래픽은 iPhone6 라는 user-agent를 헤더로 트래픽이 전송되게 됩니다.</description>
+ 차단 설정을 하기에 앞서 사용자의 PC 에서 발생하는 트래픽이 user-agent 로 유입되는 것처럼 환경을 설정하기 위하여 이전 단계에서 설치하였던 Chrome Extension 을 사용하도록 하겠습니다.
+ 크롬 브라우저에서 User-Agent Switcher 을 선택한 후 아래와 같이 &amp;ldquo;iOS&amp;rdquo; 와 &amp;ldquo;iPhone6&amp;rdquo;을 차례대로 선택합니다.  이제 이 상태에서는 브라우저에서 발생하는 모든 트래픽은 iPhone6 라는 user-agent를 헤더로 트래픽이 전송되게 됩니다.</description>
     </item>
     
   </channel>
