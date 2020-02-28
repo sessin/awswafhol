@@ -1,35 +1,25 @@
 +++
-title = "AWS 자원 삭제"
+title = "과정 복습"
 weight = 1
-pre = "<b>4.1 </b>"
+pre = "<b>6.1 </b>"
 +++
+
 * * *
- 본 실습 과정에서 사용된 AWS 자원은 크게 2가지 유형으로 생성되었습니다. 하나는 CloudFormation 을 통하여 자동으로 생성되었고 하나는 Web ACL 로 여러분들이 각각 수작업으로 생성이 되었습니다. 따라서, 실습에 사용된 AWS 자원을 삭제하려면 사용된 CloudFormation 을 삭제하고 Web ACL 을 삭제하셔야 합니다.
-***
-## 1. Web ACL 삭제
- Web ACL 을 삭제하기 위해서는 먼저 Web ACL 과 연결되어 있는 AWS Resource 를 제거하여야 합니다. 실습 과정에서 ALB 와의 연결을 설정하였으므로 ALB 와의 연결을 삭제하도록 하겠습니다.
- ALB 연결을 제거하기 위하여 Web ACL 메뉴의 "Associated AWS resources" 를 클릭한 후 실습에 사용된 ALB 를 선택합니다. 선택된 ALB 를 삭제하기 위하여 "Remove" 버튼을 클릭합니다.
-![XSS Exploit](/images/delete3.png)
-아래와 같이 경고창이 나타나면 "delete" 를 입력한 후 "Delete" 버튼을 클릭합니다.
-![XSS Exploit](/images/delete5.png)
-이제 Web ACL 과 연결되어 있는 ALB 를 삭제하였으므로 Web ACL 을 삭제할 수 있습니다. Web ACL 을 삭제하기 위하여 Web ACL 의 기본 메뉴에서 아래와 같이 실습에 사용된 Web ACL 을 선택한 후 "Delete" 버튼을 클릭합니다.
-![XSS Exploit](/images/delete2.png)
-아래와 같이 경고창이 나타나면 "delete" 를 입력한 후 "Delete" 버튼을 클릭합니다.
-![XSS Exploit](/images/delete4.png)
-모든 과정을 정상적으로 진행하였다면 아래와 같이 Web ACL 이 삭제된 것을 확인할 수 있습니다.
-![XSS Exploit](/images/delete6.png)
-***
-## 2. CloudFormation 삭제
 
-[CloudFormation 관리 콘솔](https://ap-northeast-1.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2)에 접속한 후 DVWA 생성에 사용되었던 CloudFormation 을 삭제합니다. 
 
-아래와 같이 실습에 사용된 CloudFormation 을 선택한 후 "삭제" 버튼을 클릭합니다. 
-![XSS Exploit](/images/delete1.png)
-삭제를 확인하는 경고창이 나타나면 "스택 삭제" 버튼을 클릭합니다.
-![XSS Exploit](/images/delete7.png)
+### 마치기 전에 복습
 
- {{% notice info %}}
-CloudFormation 삭제에는 시간이 소요됩니다. 몇 분이 흐른 후 CloudFormation 이 정상적으로 삭제되었음을 확인하시기 바랍니다.
-{{% /notice %}}
-***
-### 이제 모든 실습 과정이 종료되었습니다. 수고하셨습니다!!
+오늘 진행한 실습은 다음과 같은 절차로 이루어졌습니다. 
+
+1. 위협 요인이 내재된 인프라 환경을 구성하기 위해 CloudFormation 템플릿을 실행했습니다. 템플릿 실행을 통해 생성되는 리소스는 VPC (Virtual Private Cloud), ALB (Application Load Balancer), EC2인스턴스 (Linux, Apache, MySQL, PHP), Kinesis Firehose, S3 bucket 등 입니다. 
+
+2. AWS WAF가 적용되지 않은 환경에서 웹 취약점 (SQL Injection, XSS)을 확인했습니다. 
+
+3. AWS Managed Rule과 custom Rule을 이용하여 다양한 Rule들을 작성하고 적용해 보았습니다. 
+
+4. AWS WAF가 적용된 상태에서 1) SQL Injection, 2) XSS, 3) Bad bot 공격 차단 테스트를 수행해보고 정상적으로 차단이 되는 것으로 확인했습니다. 
+
+5. AWS WAF 로그를 보고 어떤 내역들이 로깅되는지 확인해보았습니다. 
+
+6. 실습이 끝난 후 CloudFormation을 삭제할 예정입니다. 
+
