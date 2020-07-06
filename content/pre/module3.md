@@ -29,7 +29,7 @@ AWS WAF 에서는 국가별 공인 IP 를 기준으로 트래픽을 허용/차�
 
 AWS WAF 에서는 웹 요청의 user-agent 헤더를 기준으로 트래픽을 허용/차단 하는 기능을 제공하고 있습니다. 랩 과정에서 특정 user-agent 값을 차단하는 환경을 가상으로 구성하기위하여 Chrome 에서 사용할 수 있는 "User-Agent Switcher" 을 설치하도록 하겠습니다.
 
-- [Chrome Store](https://chrome.google.com/webstore/search/browsec) 링크를 클릭한 후 아래와 같이 User-Agent Switcher 을 선택한 후 "Add to Chrome(또는 크롬에 추가)" 버튼을 클릭합니다.
+- [Chrome Store](https://chrome.google.com/webstore/search/user%20agent%20switcher) 링크를 클릭한 후 아래와 같이 User-Agent Switcher 을 선택한 후 "Add to Chrome(또는 크롬에 추가)" 버튼을 클릭합니다.
 
 ![Lab Diagram](/images/chrome_extension2.png)
 
