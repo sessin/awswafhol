@@ -9,7 +9,7 @@ pre = "<b>6.2 </b>"
 ***
 ## 1. Web ACL 삭제
  Web ACL 을 삭제하기 위해서는 먼저 Web ACL 과 연결되어 있는 AWS Resource 를 제거하여야 합니다. 실습 과정에서 ALB 와의 연결을 설정하였으므로 ALB 와의 연결을 삭제하도록 하겠습니다.
- ALB 연결을 제거하기 위하여 Web ACL 메뉴의 "Associated AWS resources" 를 클릭한 후 실습에 사용된 ALB 를 선택합니다. 선택된 ALB 를 삭제하기 위하여 "Remove" 버튼을 클릭합니다.
+ ALB 연결을 제거하기 위하여 Web ACL 메뉴의 "Associated AWS resources" 를 클릭한 후 실습에 사용된 ALB 를 선택합니다. 선택된 ALB 를 삭제하기 위하여 "Disassociation" 버튼을 클릭합니다.
 ![XSS Exploit](/images/delete3.png)
 아래와 같이 경고창이 나타나면 "delete" 를 입력한 후 "Delete" 버튼을 클릭합니다.
 ![XSS Exploit](/images/delete5.png)
