@@ -30,7 +30,7 @@ pre = "<b>3.1 </b>"
  ![DVWA Setting](/images/rulegroups_3.png) 
 
  {{% notice info %}}
- **Core rule set** rule group 에는 일반적으로 웹 애플리케이션에 적용할 수 있는 Rule이 포함되어 있습니다. 이러한 규칙은 OWASP 발행물 및 수많은 CVE(일반적인 취약성 및 노출도)에 설명된 취약성을 포함하여 광범위한 취약성을 악용하는 일이 없도록 보호합니자세한 사항은 [AWS DOCS](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html)를 참고해주시기 바랍니다. 
+ **Core rule set** rule group 에는 일반적으로 웹 애플리케이션에 적용할 수 있는 Rule이 포함되어 있습니다. 이러한 규칙은 OWASP 발행물 및 수많은 CVE(일반적인 취약성 및 노출도)에 설명된 취약성을 포함하여 광범위한 취약성을 악용하는 일이 없도록 보호합니다. 자세한 사항은 [AWS DOCS](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html)를 참고해주시기 바랍니다. 
  {{% /notice %}}
 
  {{% notice info %}}

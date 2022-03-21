@@ -54,8 +54,9 @@ pre = "<b>1.1 </b>"
 
 	a.	CloudFormation은 템플릿 파일 (json, yml)에 EC2 인스턴스, 네트워크 구성 등의 클라우드 인프라 리소스를 모델링하고 클라우드 환경에서 프로비저닝할 수 있는 서비스입니다. 
 	
-	b. CloudFormation 템플릿을 실행하기 위해 [링크](https://ap-northeast-2.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/quickcreate?templateURL=https://do-not-delete-security-builders-201-lab-contents.s3.ap-northeast-2.amazonaws.com/waf-v2-workshop.template&stackName=MyDVWA&param_InstanceType=t2.micro&param_KeyName=waf-lab-seoul)를 클릭합니다. [링크](https://ap-northeast-2.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/quickcreate?templateURL=https://do-not-delete-security-builders-201-lab-contents.s3.ap-northeast-2.amazonaws.com/waf-v2-workshop.template&stackName=MyDVWA&param_InstanceType=t2.micro&param_KeyName=waf-lab-seoul)를 클릭하면 아래와 같은 화면이 표시됩니다.
+	b. CloudFormation 템플릿을 실행하기 위해 다음을 클릭합니다. 그러면 아래와 같은 화면이 표시됩니다. {{% button href="https://ap-northeast-2.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/quickcreate?templateURL=https://do-not-delete-security-builders-201-lab-contents.s3.ap-northeast-2.amazonaws.com/waf-v2-workshop.template&stackName=MyDVWA&param_InstanceType=t2.micro&param_KeyName=waf-lab-seoul" icon="fas fa-terminal" %}}CloudFormation Stack{{% /button %}}
 	
+
 ![DVWA Creation](/images/1st_stack_creation.png)
 * 템플릿 생성에 사용된 스택 이름, 파라미터, KeyName, SSHLocation 등은 필요에 따라 수정이 가능합니다. 다만, 원활한 진행을 위하여 가급적 기본값을 사용하시기를 권고드립니다.
 
